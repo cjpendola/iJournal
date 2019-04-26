@@ -11,10 +11,23 @@ import UIKit
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
+        print("ViewController viewDidLoad")
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        FirebaseManager.shared.addEntry { (success) in
+            if(success){
+                print("firebase")
+            }
+        }
+        
+        
+        FirebaseManager.shared.getUserEntries { (success) in
+            if(success){
+                print("get firebase")
+            }
+        }
     }
-
+    
 
 }
 
