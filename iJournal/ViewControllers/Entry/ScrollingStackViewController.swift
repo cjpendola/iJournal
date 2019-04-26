@@ -34,7 +34,7 @@
 import UIKit
 import AVFoundation
 
-class ScrollingStackViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate,AVAudioRecorderDelegate {
+class ScrollingStackViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate,AVAudioRecorderDelegate, UITextViewDelegate {
     
     var stackView : UIStackView?
     var audioFilename:URL?
@@ -47,9 +47,19 @@ class ScrollingStackViewController: UIViewController, UIImagePickerControllerDel
      /*Audio**/
     
     @IBAction func addImage(_ sender: Any) {
-        //selectPhotoButton()
+        selectPhotoButton()
     }
     
+    func newTextView(){
+        let textView: UITextView = UITextView()
+        textView.text = "This is testing text"
+        textView.textAlignment = NSTextAlignment.left
+        textView.textColor = UIColor.darkGray
+        textView.backgroundColor = .white
+//        textView.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        textView.isScrollEnabled = false
+        stackView?.addArrangedSubview(textView)
+    }
     
     func setAudio(){
         recordingSession = AVAudioSession.sharedInstance()
@@ -147,9 +157,9 @@ class ScrollingStackViewController: UIViewController, UIImagePickerControllerDel
     
     override func viewDidLoad() {
         
-        setAudio()
+        //setAudio()
         
-        /*let scrollView = UIScrollView()
+        let scrollView = UIScrollView()
         self.view.addSubview(scrollView)
         print(self.view.topAnchor)
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -175,7 +185,9 @@ class ScrollingStackViewController: UIViewController, UIImagePickerControllerDel
             stackView!.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             stackView!.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
             ])
-        */
+        
+        newTextView()
+        
     }
     
    func selectPhotoButton() {
@@ -211,7 +223,7 @@ class ScrollingStackViewController: UIViewController, UIImagePickerControllerDel
             let image = UIImageView(image: photo)
             image.heightAnchor.constraint(equalTo: image.widthAnchor, multiplier: 1.0/2.0).isActive = true
             image.contentMode = UIView.ContentMode.scaleAspectFit
-            image.backgroundColor = .green
+           
             image.clipsToBounds = true
             stackView!.addArrangedSubview(image)
             
@@ -221,6 +233,7 @@ class ScrollingStackViewController: UIViewController, UIImagePickerControllerDel
             
             //stackView.addArrangedSubview(image)
             //scrollToEnd(image)
+            newTextView()
         }
     }
 
