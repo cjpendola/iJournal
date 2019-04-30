@@ -428,7 +428,7 @@ class FirebaseManager {
     //**iJOURNAL**/
     func addEntry(completion: @escaping (Bool) -> Void) {
         
-        guard let loggedInProfileRef = loggedInUserProfile?.documentRef else {
+        /*guard let loggedInProfileRef = loggedInUserProfile?.documentRef else {
             print("A reference was missing")
             return
         }
@@ -456,14 +456,14 @@ class FirebaseManager {
                 print("Successfully added entry!")
                 completion(true)
             }
-        }
+        }*/
     }
     
     
     
     
     func getUserEntries( completion: @escaping (Bool) -> Void) {
-        print("getUserEntries")
+        /*print("getUserEntries")
         guard let profileRef = loggedInUserProfile?.documentRef
         else {
             print("No logged in user")
@@ -483,7 +483,7 @@ class FirebaseManager {
                 }
                 completion(true)
             }
-        }
+        }*/
     }
     
     
@@ -493,30 +493,30 @@ class FirebaseManager {
         print(fileUrl)
         
         //let fileUrl = self.getAudioFileURL()
-        let storage = Storage.storage()
         let metadata = StorageMetadata()
         
-        
         metadata.contentType = "audio/mp4"
-        //let refStr = (Auth.auth().currentUser?.email)! + "|" + "\(NSUUID().uuidString)" + "|" + "recording.m4a"
-        //let pathStr = "Messages/\(NSUUID().uuidString)/\(refStr)"
-        //let uploadRef = storage.reference().child(pathStr)
         let storageRef = Storage.storage().reference().child("audioNotes").child("recording.m4a")
         storageRef.putFile(from: fileUrl, metadata: nil) { metadata,
             error in
             if error == nil {
                 print("Successfully Uploaded Audio")
-                completion(true)
-                return
-                /*let downloadUrl = (metadata?.downloadURL())!
-                print("URL: \(downloadUrl)")
                 
-                var messageInfoArray = refStr.components(separatedBy: "|")
-                let messageDict = ["Sender": messageInfoArray[0], "MessageBody": "recording-audioRecorded", "AudioURL": "\(pathStr)", "AudioID": messageInfoArray[1], "IsAudio": "\(NSUUID().uuidString)-True"]
-                
-                let childUpdates = ["Mensagens/\(messageInfoArray[1])": messageDict]
-                Database.database().reference().updateChildValues(childUpdates)*/
-                
+                storageRef.downloadURL(completion: { (url, err) in
+                    if let err = err {
+                        completion(false)
+                        print(err)
+                        return
+                    }
+                    guard let url = url else {
+                        completion(false);
+                        return
+                    }
+                    
+                    print (url.absoluteString)
+                    completion(true)
+                    return
+                })
             }
             else {
                 dump(metadata)

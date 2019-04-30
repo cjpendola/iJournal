@@ -72,8 +72,9 @@ class preHomeViewController: UIViewController {
     }
     
     func gotoUserHome(){
+        print("gotoUserHome")
         let storyboard = UIStoryboard(name: "Home", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "entry")
+        let controller = storyboard.instantiateViewController(withIdentifier: "home")
         self.present(controller, animated: true, completion: nil)
     }
 }

@@ -2,9 +2,10 @@
 //  UIView.swift
 //  iJournal
 //
-//  Created by Carlos Javier Pendola on 4/25/19.
+//  Created by Carlos Javier Pendola on 4/29/19.
 //  Copyright © 2019 Carlos Javier Pendola. All rights reserved.
 //
+import UIKit
 
 extension UIView {
     
@@ -37,3 +38,5 @@ extension UIView {
         }
     }
 }
+
+

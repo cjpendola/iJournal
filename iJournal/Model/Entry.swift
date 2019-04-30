@@ -7,6 +7,22 @@
 //
 
 
+class Entry {
+    var title: String
+    var date: String
+    var content: [Element]
+    
+    init(title: String, date: String, content: [Element] = []){
+        self.title = title
+        self.date = date
+        self.content = content
+    }
+}
+
+
+
+/*
+
 import Foundation
 import FirebaseFirestore
 
@@ -55,3 +71,4 @@ class Entry {
     }
 }
 
+*/

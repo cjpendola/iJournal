@@ -15,6 +15,7 @@ target 'iJournal' do
   pod 'GoogleSignIn'
   pod 'PopupDialog'
   pod 'JGProgressHUD'
+  pod 'MaterialComponents'
 
 end
 
