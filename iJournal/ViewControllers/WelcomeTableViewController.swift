@@ -16,11 +16,23 @@ class WelcomeTableViewController: UITableViewController, UICollectionViewDataSou
     @IBOutlet weak var archiveView: UICollectionView!
     
     
+    @IBOutlet weak var menuButton: UIBarButtonItem!
+    
+    @IBAction func showMenuButtonTapped(_ sender: Any) {
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.archiveView.dataSource = self
         self.archiveView.delegate = self
+        
+        if self.revealViewController() != nil {
+            menuButton.target = self.revealViewController()
+            menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
+        
     }
     
     
