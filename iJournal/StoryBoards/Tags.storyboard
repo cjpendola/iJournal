@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QkT-zI-azW">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="apercu-regular-pro.otf">
+            <string>ApercuPro-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Tags-->
+        <scene sceneID="u9X-KA-8dS">
+            <objects>
+                <viewController id="Mg1-mp-jTU" customClass="TagsViewController" customModule="iJournal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O3k-HS-W4U">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Under Construction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="303-G1-oGv">
+                                <rect key="frame" x="144" y="394.5" width="126.5" height="19.5"/>
+                                <fontDescription key="fontDescription" name="ApercuPro-Regular" family="Apercu Pro" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="303-G1-oGv" firstAttribute="centerX" secondItem="O3k-HS-W4U" secondAttribute="centerX" id="fB2-m8-ceO"/>
+                            <constraint firstItem="303-G1-oGv" firstAttribute="centerY" secondItem="O3k-HS-W4U" secondAttribute="centerY" id="hzj-8y-Q1H"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1Es-wn-aSW"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Tags" id="b4s-qI-OJC">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="s9q-QR-i2h"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="menuButton" destination="s9q-QR-i2h" id="aLX-V4-mtp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Zu-Zg-Wht" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1957.9710144927537" y="338.83928571428572"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kWT-Sm-rTa">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QkT-zI-azW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Iil-IR-GJq">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Mg1-mp-jTU" kind="relationship" relationship="rootViewController" id="Hbr-gp-lWO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wpv-7W-nTk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="338.83928571428572"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="menu" width="22" height="22"/>
+    </resources>
+</document>

@@ -13,12 +13,17 @@
         <!--Pre Home View Controller-->
         <scene sceneID="WYg-hF-RxS">
             <objects>
-                <viewController id="mGw-Eb-QcT" customClass="preHomeViewController" customModule="Tiki" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="mGw-Eb-QcT" customClass="preHomeViewController" customModule="iJournal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fdw-pX-oRY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <viewLayoutGuide key="safeArea" id="DNw-8a-0pp"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3vY-x1-PRw" userLabel="First Responder" sceneMemberID="firstResponder"/>

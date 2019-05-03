@@ -108,12 +108,12 @@
         <!--Rite-->
         <scene sceneID="cQr-WM-NHz">
             <objects>
-                <tableViewController id="Emo-bj-5cn" customClass="WelcomeTableViewController" customModule="iJournal" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Emo-bj-5cn" customClass="HomeTableViewController" customModule="iJournal" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="BE7-dE-mdd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="y3s-Fw-GqU">
+                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="y3s-Fw-GqU">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -144,7 +144,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="RdA-eF-ifO" userLabel="NewStack">
                                                     <rect key="frame" x="32" y="46" width="350" height="161.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="247" text="Good afternoon, Alexander" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbC-Qd-gjS">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="247" text="Good afternoon," lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbC-Qd-gjS">
                                                             <rect key="frame" x="0.0" y="0.0" width="350" height="101"/>
                                                             <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="28"/>
                                                             <nil key="textColor"/>
@@ -258,7 +258,7 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="archiveCell" id="AXH-Ol-xDL" customClass="ArchiveCollectionViewCell" customModule="JustLayout" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="archiveCell" id="AXH-Ol-xDL" customClass="ArchiveCollectionViewCell" customModule="iJournal" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="-13" width="178" height="190"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -451,7 +451,6 @@
         <!--Navigation Controller-->
         <scene sceneID="3oq-XM-kuF">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sCC-aT-B7K" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="i84-EM-76Z" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lkn-2q-MeP">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -461,11 +460,12 @@
                         <segue destination="Emo-bj-5cn" kind="relationship" relationship="rootViewController" id="vgd-SY-IR5"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sCC-aT-B7K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-677" y="228"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="UtA-F6-FzS"/>
+        <segue reference="Dnb-SZ-yW8"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -15,11 +15,9 @@ class MonthViewCell: UICollectionViewCell {
     override var isSelected: Bool {
         didSet {
             if isSelected {
-                monthLabel!.textColor = UIColor.green
-                monthLabel.font = UIFont.boldSystemFont(ofSize: 14)
+                monthLabel!.textColor = UIColor.darkGray
             } else {
-                monthLabel!.textColor = UIColor.darkText
-                monthLabel.font = UIFont.systemFont(ofSize: 14)
+                monthLabel!.textColor = UIColor.lightGray
             }
         }
     }

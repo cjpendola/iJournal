@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="apercu-mono-pro.otf">
+            <string>ApercuPro-Mono</string>
+        </array>
+        <array key="apercu-regular-pro.otf">
+            <string>ApercuPro-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="URG-At-hhO">
+            <objects>
+                <navigationController storyboardIdentifier="UINavigationController-9Af-qk-gFc" automaticallyAdjustsScrollViewInsets="NO" id="9Af-qk-gFc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="gKC-SD-qQk">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="yoQ-7g-Jmo" kind="relationship" relationship="rootViewController" id="448-Qk-68R"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dA8-wL-EgX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-159" y="1144"/>
+        </scene>
+        <!--Archive-->
+        <scene sceneID="mIW-ge-512">
+            <objects>
+                <viewController storyboardIdentifier="search" id="yoQ-7g-Jmo" customClass="ArchiveViewController" customModule="iJournal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="n4S-YA-2lT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eVP-vP-Zo8">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="42"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="fYr-i8-6FS"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Mm5-ry-qL3">
+                                    <size key="itemSize" width="150" height="40"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="YearViewCell" id="hZI-sX-f70" customClass="YearViewCell" customModule="iJournal" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="1" width="150" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="40"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3V-hB-NC0">
+                                                    <rect key="frame" x="58" y="12.5" width="34.5" height="15.5"/>
+                                                    <fontDescription key="fontDescription" name="ApercuPro-Mono" family="Apercu Pro" pointSize="11"/>
+                                                    <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="n3V-hB-NC0" firstAttribute="centerX" secondItem="hZI-sX-f70" secondAttribute="centerX" id="Spp-Ty-ooL"/>
+                                            <constraint firstItem="n3V-hB-NC0" firstAttribute="centerY" secondItem="hZI-sX-f70" secondAttribute="centerY" id="wCM-2a-rs6"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="n3V-hB-NC0" id="dP6-ch-ROJ"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="yoQ-7g-Jmo" id="gtC-NY-m0B"/>
+                                    <outlet property="delegate" destination="yoQ-7g-Jmo" id="kBn-0V-HrL"/>
+                                </connections>
+                            </collectionView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="e1N-BM-kbX">
+                                <rect key="frame" x="0.0" y="42" width="414" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="KGc-kN-fIg"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3Ft-Dy-5gX">
+                                    <size key="itemSize" width="150" height="40"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MonthViewCell" id="CJS-Tr-jqV" customClass="MonthViewCell" customModule="iJournal" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="40"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="stQ-rr-1M6">
+                                                    <rect key="frame" x="58" y="12.5" width="34.5" height="15.5"/>
+                                                    <fontDescription key="fontDescription" name="ApercuPro-Mono" family="Apercu Pro" pointSize="11"/>
+                                                    <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="stQ-rr-1M6" firstAttribute="centerY" secondItem="CJS-Tr-jqV" secondAttribute="centerY" id="4xt-aX-G9M"/>
+                                            <constraint firstItem="stQ-rr-1M6" firstAttribute="centerX" secondItem="CJS-Tr-jqV" secondAttribute="centerX" id="MVa-rj-LnM"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="monthLabel" destination="stQ-rr-1M6" id="qje-y4-p5c"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="yoQ-7g-Jmo" id="45h-8H-hcT"/>
+                                    <outlet property="delegate" destination="yoQ-7g-Jmo" id="hca-Zq-0wU"/>
+                                </connections>
+                            </collectionView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zzd-be-Lyy">
+                                <rect key="frame" x="0.0" y="82" width="414" height="692"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchCell" rowHeight="155" id="ZGr-2e-V9f" customClass="SearchTableViewCell" customModule="iJournal" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="155"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZGr-2e-V9f" id="4hJ-xH-iiG">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="154.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="OK5-vS-4cb">
+                                                    <rect key="frame" x="40" y="31" width="334" height="93"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVX-Dg-TAL">
+                                                            <rect key="frame" x="0.0" y="0.0" width="334" height="25.5"/>
+                                                            <fontDescription key="fontDescription" name="ApercuPro-Mono" family="Apercu Pro" pointSize="11"/>
+                                                            <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ghw-j3-4RA">
+                                                            <rect key="frame" x="0.0" y="33.5" width="334" height="26"/>
+                                                            <fontDescription key="fontDescription" name="ApercuPro-Regular" family="Apercu Pro" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7o0-Es-Pqe">
+                                                            <rect key="frame" x="0.0" y="67.5" width="334" height="25.5"/>
+                                                            <fontDescription key="fontDescription" name="ApercuPro-Regular" family="Apercu Pro" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="OK5-vS-4cb" secondAttribute="bottom" constant="20" id="VpE-UW-qYe"/>
+                                                <constraint firstItem="OK5-vS-4cb" firstAttribute="top" secondItem="4hJ-xH-iiG" secondAttribute="topMargin" constant="20" id="af5-Zg-4YY"/>
+                                                <constraint firstItem="OK5-vS-4cb" firstAttribute="leading" secondItem="4hJ-xH-iiG" secondAttribute="leadingMargin" constant="20" id="r4h-d9-dkA"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="OK5-vS-4cb" secondAttribute="trailing" constant="20" id="xcO-38-rjH"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="aVX-Dg-TAL" id="efF-PF-JQC"/>
+                                            <outlet property="tagsLabel" destination="7o0-Es-Pqe" id="m1u-Mp-POz"/>
+                                            <outlet property="titleLabel" destination="Ghw-j3-4RA" id="vWa-Pd-CuM"/>
+                                            <segue destination="bzD-aD-Ekj" kind="show" identifier="passDetail" id="nRL-z2-Kc4"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="yoQ-7g-Jmo" id="vzA-wg-jWZ"/>
+                                    <outlet property="delegate" destination="yoQ-7g-Jmo" id="dDN-m8-fx8"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="e1N-BM-kbX" firstAttribute="trailing" secondItem="Mkp-BX-RMe" secondAttribute="trailing" id="2qq-GH-5f0"/>
+                            <constraint firstItem="e1N-BM-kbX" firstAttribute="leading" secondItem="Mkp-BX-RMe" secondAttribute="leading" id="554-cX-mQC"/>
+                            <constraint firstItem="Zzd-be-Lyy" firstAttribute="leading" secondItem="Mkp-BX-RMe" secondAttribute="leading" id="Ajd-sJ-zFM"/>
+                            <constraint firstItem="Zzd-be-Lyy" firstAttribute="top" secondItem="e1N-BM-kbX" secondAttribute="bottom" id="HGN-ZD-i2d"/>
+                            <constraint firstItem="e1N-BM-kbX" firstAttribute="top" secondItem="eVP-vP-Zo8" secondAttribute="bottom" id="II3-cU-snF"/>
+                            <constraint firstItem="Mkp-BX-RMe" firstAttribute="trailing" secondItem="eVP-vP-Zo8" secondAttribute="trailing" id="Ors-Hm-pFB"/>
+                            <constraint firstItem="Mkp-BX-RMe" firstAttribute="bottom" secondItem="Zzd-be-Lyy" secondAttribute="bottom" id="PAF-0A-hz3"/>
+                            <constraint firstItem="eVP-vP-Zo8" firstAttribute="leading" secondItem="Mkp-BX-RMe" secondAttribute="leading" id="Y0D-MO-3mV"/>
+                            <constraint firstItem="eVP-vP-Zo8" firstAttribute="top" secondItem="Mkp-BX-RMe" secondAttribute="top" id="fP9-5R-8VF"/>
+                            <constraint firstItem="Mkp-BX-RMe" firstAttribute="trailing" secondItem="Zzd-be-Lyy" secondAttribute="trailing" id="gQZ-41-CSn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Mkp-BX-RMe"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Archive" id="rBE-4Y-xsa">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="tya-3F-pOG"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="menuButton" destination="tya-3F-pOG" id="zV9-2b-w2r"/>
+                        <outlet property="monthCollectionView" destination="e1N-BM-kbX" id="UW6-Bo-bPa"/>
+                        <outlet property="tableView" destination="Zzd-be-Lyy" id="UAY-eW-CIn"/>
+                        <outlet property="yearCollectionView" destination="eVP-vP-Zo8" id="p0e-XJ-ty9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="luE-pl-b5i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="688.40579710144937" y="1143.75"/>
+        </scene>
+        <!--UIViewController-pe6-CG-SZp-->
+        <scene sceneID="BdJ-sm-g8b">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" referencedIdentifier="UIViewController-pe6-CG-SZp" id="bzD-aD-Ekj" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="imP-IB-aEe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3765" y="152"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="menu" width="22" height="22"/>
+    </resources>
+</document>

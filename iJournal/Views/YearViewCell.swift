@@ -8,25 +8,22 @@
 
 import UIKit
 
-class CalendarViewCell: UICollectionViewCell {
+class YearViewCell: UICollectionViewCell {
     
     @IBOutlet weak var dateLabel: UILabel!
     
     override var isSelected: Bool {
         didSet {
             if isSelected {
-                dateLabel!.textColor = UIColor.green
-                dateLabel.font = UIFont.boldSystemFont(ofSize: 14)
+                dateLabel!.textColor = UIColor.darkGray
             } else {
-                dateLabel!.textColor = UIColor.darkText
-                dateLabel.font = UIFont.systemFont(ofSize: 14)
+                dateLabel!.textColor = UIColor.lightGray
             }
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
 }

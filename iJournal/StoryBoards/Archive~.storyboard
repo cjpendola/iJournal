@@ -270,7 +270,6 @@
         <!--Navigation Controller-->
         <scene sceneID="URG-At-hhO">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dA8-wL-EgX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9Af-qk-gFc" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="gKC-SD-qQk">
@@ -290,13 +289,13 @@
                         <segue destination="yoQ-7g-Jmo" kind="relationship" relationship="rootViewController" id="448-Qk-68R"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dA8-wL-EgX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-159" y="1144"/>
         </scene>
-        <!--RIET-->
+        <!--Archive-->
         <scene sceneID="mIW-ge-512">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="luE-pl-b5i" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="search" id="yoQ-7g-Jmo" customClass="ArchiveViewController" customModule="iJournal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n4S-YA-2lT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
@@ -457,7 +456,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Mkp-BX-RMe"/>
                     </view>
-                    <navigationItem key="navigationItem" title="RIET" id="rBE-4Y-xsa">
+                    <navigationItem key="navigationItem" title="Archive" id="rBE-4Y-xsa">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="tya-3F-pOG"/>
                     </navigationItem>
                     <connections>
@@ -467,6 +466,7 @@
                         <outlet property="yearCollectionView" destination="eVP-vP-Zo8" id="p0e-XJ-ty9"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="luE-pl-b5i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="688.40579710144937" y="1143.75"/>
         </scene>

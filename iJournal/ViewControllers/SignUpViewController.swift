@@ -7,7 +7,6 @@
 //
 
 import UIKit
-//import GoogleSignIn
 import Firebase
 import PopupDialog
 import JGProgressHUD
@@ -25,8 +24,8 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboard), name: UIResponder.keyboardWillHideNotification , object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboard), name: UIResponder.keyboardWillChangeFrameNotification , object: nil)
+        //NotificationCenter.default.addObserver(self, selector: #selector(keyboard), name: UIResponder.keyboardWillHideNotification , object: nil)
+        //NotificationCenter.default.addObserver(self, selector: #selector(keyboard), name: UIResponder.keyboardWillChangeFrameNotification , object: nil)
         
         usernameTextField.delegate  = self
         emailTextField.delegate     = self

@@ -9,10 +9,11 @@
 
 import Foundation
 import FirebaseFirestore
+import Firebase
 import FirebaseAuth
 import GoogleSignIn
 import OneSignal
-import Firebase
+
 import JGProgressHUD
 import CoreLocation
 
@@ -248,7 +249,7 @@ class FirebaseManager {
         }
     }
     
-
+    
     func createUserAndProfileWith(username: String, email: String, password: String, completion: @escaping (Bool, Bool, String?) -> Void) {
         self.checkIfUsernameIsUnique(username: username) { usernameIsUnique, error in
             if let error = error {
@@ -309,7 +310,7 @@ class FirebaseManager {
     
     
     
-   func handleError(error: Error, shouldNotify: @escaping (Bool, String?) -> Void) {
+    func handleError(error: Error, shouldNotify: @escaping (Bool, String?) -> Void) {
         guard let code = AuthErrorCode(rawValue: error._code) else { print("There was no error code from error.") ; return }
         let genericIncorrectCredentialsMessage = "We couldn't find an account with that info."
         // Cases marked should notify user
@@ -422,54 +423,172 @@ class FirebaseManager {
         }
     }
     
-    
-    
-    
-    //**iJOURNAL**/
-    func addEntry(completion: @escaping (Bool) -> Void) {
+    var elements : [Element] = []
+    var newElements : [Element] = []
+    var countElement = 0
+    let dispatchGroup = DispatchGroup()
+    func addEntry( title:String, content:[Element], completion: @escaping (Bool) -> Void) {
+        print("addEntry")
+        elements = []
+        newElements = []
+        countElement = 0
+        guard let loggedInUserProfile = loggedInUserProfile?.documentRef else {
+            print("A reference was missing")
+            return
+        }
+        elements = content
+        dispatchGroup.enter()
         
-        /*guard let loggedInProfileRef = loggedInUserProfile?.documentRef else {
+        print("====++++++++=====")
+        dump(elements)
+        print("====++++++++=====")
+        checkContent(ele:elements[countElement])
+        dispatchGroup.notify(queue: .main) {
+            let entry =  Entry(title: title, content: self.newElements, date: nil,  profile_id: loggedInUserProfile, documentRef: nil, documentID: "")
+            self.db.collection("entries").document().setData(
+                entry.dictionaryRepresentation()
+            ) { error in
+                if let error = error {
+                    print("Error adding entry: \((error, error.localizedDescription))")
+                    completion(false)
+                } else {
+                    print("Successfully added entry!")
+                    completion(true)
+                }
+            }
+        }
+    }
+    
+    
+    func updateEntry(entry:Entry, title:String, content:[Element], completion: @escaping (Bool) -> Void) {
+        print("updateEntry")
+        elements = []
+        newElements = []
+        countElement = 0
+        guard let loggedInUserProfile = loggedInUserProfile?.documentRef else {
             print("A reference was missing")
             return
         }
         
-        // This is an array of dictionaries.
-        var dictionaries = [[String: Int]]()
-        
-        // Create a dictionary and add it to the array.
-        let dictionary1: [String: Int] = ["cat": 100]
-        dictionaries.append(dictionary1)
-        
-        // Create another dictionary.
-        let dictionary2: [String: Int] = ["dog": 200]
-        dictionaries.append(dictionary2)
+        guard let entryRef = entry.documentRef else {
+            print("A entry reference was missing")
+            return
+        }
         
         
+        elements = content
+        dispatchGroup.enter()
         
-        let entry = Entry(userUID: "userid", profile_id: loggedInProfileRef, documentRef:nil, documentID: "prueba no mas", data: dictionaries, date: Date())
-        
-        self.db.collection("entries").document().setData(entry.dictionaryRepresentation()) { error in
-            if let error = error {
-                print("Error adding entry: \((error, error.localizedDescription))")
-                completion(false)
-            } else {
-                print("Successfully added entry!")
-                completion(true)
+        checkContent(ele:elements[countElement])
+        dispatchGroup.notify(queue: .main) {
+            let entry =  Entry(title: title, content: self.newElements, date: nil,  profile_id: loggedInUserProfile, documentRef: nil, documentID: "")
+            entryRef.updateData(
+                entry.dictionaryRepresentation()
+            ) { error in
+                if let error = error {
+                    print("Error adding entry: \((error, error.localizedDescription))")
+                    completion(false)
+                } else {
+                    print("Successfully added entry!")
+                    completion(true)
+                }
             }
-        }*/
+        }
     }
+    
+    
+    
+    func checkContent(ele:Element){
+        print("checkContent")
+        print(elements.count)
+        print(countElement)
+        
+        if(countElement < elements.count - 1 ){
+            if let info = ele.info as? UIImage{
+                let uniqueID = NSUUID().uuidString
+                uploadImage(image: info, uniqueID:uniqueID ) { (imgUrl) in
+                    self.newElements.append( Element(info: imgUrl, file:.image ) )
+                    self.countElement += 1
+                    self.checkContent(ele:self.elements[self.countElement])
+                }
+                /*uploadToCatBox(image: info, uniqueID:uniqueID ) { (imgUrl) in
+                    self.newElements.append( Element(info: imgUrl, file:.image ) )
+                    self.countElement += 1
+                    self.checkContent(ele:self.elements[self.countElement])
+                }*/
+            }
+            else{
+                if let info = ele.info as? String{
+                    if(info != ""){
+                        newElements.append( Element(info: info, file:.text ) )
+                    }
+                    self.countElement += 1
+                    self.checkContent(ele:self.elements[self.countElement])
+                }
+            }
+        }
+        else{
+            dispatchGroup.leave()
+        }
+        
+    }
+    
+    
+//    func addEntry( title:String, content:[Element], completion: @escaping (Bool) -> Void) {
+//        print("addEntry")
+//        guard let loggedInUserProfile = loggedInUserProfile?.documentRef else {
+//            print("A reference was missing")
+//            return
+//        }
+//        var elements : [Element] = []
+//        let dispatchGroup = DispatchGroup()
+//        for ele in content{
+//            dispatchGroup.enter()
+//            if let info = ele.info as? UIImage{
+//                let uniqueID = NSUUID().uuidString
+//                //elements.append( Element(info: uniqueID, file:.text ) )
+//                uploadImage(image: info, uniqueID:uniqueID ) { (imgUrl) in
+//                    elements.append( Element(info: imgUrl, file:.image ) )
+//                    dispatchGroup.leave()
+//                }
+//            }
+//            else{
+//                if let info = ele.info as? String{
+//                    elements.append( Element(info: info, file:.text ) )
+//                }
+//                dispatchGroup.leave()
+//            }
+//        }
+//
+//        dispatchGroup.notify(queue: .main) {
+//            let entry =  Entry(title: title, content: elements, date: nil,  profile_id: loggedInUserProfile, documentRef: nil, documentID: "")
+//            self.db.collection("entries").document().setData(
+//                entry.dictionaryRepresentation()
+//            ) { error in
+//                if let error = error {
+//                    print("Error adding entry: \((error, error.localizedDescription))")
+//                    completion(false)
+//                } else {
+//                    print("Successfully added entry!")
+//                    completion(true)
+//                }
+//            }
+//        }
+//    }
     
     
     
     
     func getUserEntries( completion: @escaping (Bool) -> Void) {
-        /*print("getUserEntries")
+        print("getUserEntries")
         guard let profileRef = loggedInUserProfile?.documentRef
-        else {
-            print("No logged in user")
-            completion(false)
-            return
+            else {
+                print("No logged in user")
+                completion(false)
+                return
         }
+        
+        print(profileRef)
         db.collection("entries").whereField("profile_id", isEqualTo: profileRef).addSnapshotListener { (querySnapshot, error) in
             if querySnapshot?.documents == nil || error != nil {
                 print("Error querying entries: \((error, error!.localizedDescription))")
@@ -477,16 +596,99 @@ class FirebaseManager {
             } else {
                 self.userEntries = []
                 for doc in querySnapshot!.documents {
-                    if let stamps = Entry(documentSnapshot: doc) {
-                        self.userEntries.append(stamps)
+                    if let entry = Entry(documentSnapshot: doc) {
+                        self.userEntries.append(entry)
+                    }
+                }
+                
+                dump(self.userEntries)
+                completion(true)
+            }
+        }
+    }
+    
+    
+    func updateUserEntries( year:String, month:String , completion: @escaping (Bool) -> Void) {
+        print("getUserEntries")
+        guard let profileRef = loggedInUserProfile?.documentRef
+            else {
+                print("No logged in user")
+                completion(false)
+                return
+        }
+        
+        
+        /*let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd HH:mm"
+        let start = formatter.date(from: "2019/05/02 00:00")
+        let end   = formatter.date(from: "2019/05/03 00:00")*/
+        
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.year, .month, .day], from: Date())
+        let start = calendar.date(from: components)!
+        let end = calendar.date(byAdding: .day, value: 1, to: start)!
+        
+        
+        db.collection("entries").whereField("profile_id", isEqualTo: profileRef).whereField("date", isGreaterThan: start)
+            .whereField("date", isLessThan: end).order(by:"date").addSnapshotListener { (querySnapshot, error) in
+            if querySnapshot?.documents == nil || error != nil {
+                print("Error querying entries: \((error, error!.localizedDescription))")
+                completion(false)
+            } else {
+                self.userEntries = []
+                for doc in querySnapshot!.documents {
+                    if let entry = Entry(documentSnapshot: doc) {
+                        self.userEntries.append(entry)
                     }
                 }
                 completion(true)
             }
-        }*/
+        }
     }
     
     
+    
+    func uploadImage(image:UIImage, uniqueID:String, completion: @escaping(String) -> Void ){
+        guard let _ = loggedInUserProfile?.documentRef
+            else {
+                print("User login reference is missing") ;
+                completion("");
+                return
+        }
+        
+        //let imageName = NSUUID().uuidString
+        let storageRef = Storage.storage().reference().child("entry_images").child("\(uniqueID).jpg")
+        
+        guard let cgimage = image.cgImage else  {
+            completion("")
+            return
+        }
+        
+        let imageToUpload: UIImage = UIImage(cgImage: cgimage)
+        if let imageToUpload = imageToUpload.jpegData(compressionQuality: 1) {
+            let metadata = StorageMetadata()
+            metadata.contentType = "image/jpg"
+            storageRef.putData(imageToUpload , metadata: metadata, completion: { (_, error) in
+                if let _ = error {
+                    completion("")
+                    return
+                }
+                storageRef.downloadURL(completion: { (url, err) in
+                    if let _ = err {
+                        completion("")
+                        return
+                    }
+                    guard let url = url else {
+                        completion("");
+                        return
+                    }
+                    print (url.absoluteString)
+                    completion(url.absoluteString);
+                    return
+                })
+            })
+        }
+    }
     
     func uploadAudioToFirebase(fileUrl: URL , completion: @escaping (Bool) -> Void) {
         print("uploadAudioToFirebase")
@@ -535,6 +737,64 @@ class FirebaseManager {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let documentDirectory = paths[0]
         return documentDirectory
+    }
+    
+    
+    
+    func uploadToCatBox(image:UIImage, uniqueID:String, completion: @escaping(String) -> Void ){
+        
+        let filename = "avatar.png"
+        let boundary = uniqueID
+        let fieldName = "reqtype"
+        let fieldValue = "fileupload"
+        
+        let config = URLSessionConfiguration.default
+        let session = URLSession(configuration: config)
+        
+        // Set the URLRequest to POST and to the specified URL
+        var urlRequest = URLRequest(url: URL(string: "https://catbox.moe/user/api.php")!)
+        urlRequest.httpMethod = "POST"
+        
+        // Set Content-Type Header to multipart/form-data, this is equivalent to submitting form data in a web browser
+        urlRequest.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+        
+        var data = Data()
+        
+        data.append("\r\n--\(boundary)\r\n".data(using: .utf8)!)
+        data.append("Content-Disposition: form-data; name=\"\(fieldName)\"\r\n\r\n".data(using: .utf8)!)
+        data.append("\(fieldValue)".data(using: .utf8)!)
+        
+        
+        data.append("\r\n--\(boundary)\r\n".data(using: .utf8)!)
+        data.append("Content-Disposition: form-data; name=\"fileToUpload\"; filename=\"\(filename)\"\r\n".data(using: .utf8)!)
+        data.append("Content-Type: image/png\r\n\r\n".data(using: .utf8)!)
+        data.append(image.pngData()!)
+        
+        data.append("\r\n--\(boundary)--\r\n".data(using: .utf8)!)
+        
+        session.uploadTask(with: urlRequest, from: data, completionHandler: { responseData, response, error in
+            
+            if(error != nil){
+                print("\(error!.localizedDescription)")
+                completion("");
+                return
+            }
+            
+            guard let responseData = responseData else {
+                print("no response data")
+                completion("")
+                return
+            }
+            
+            print( responseData )
+            if let responseString = String(data: responseData, encoding: .utf8) {
+                completion(responseString);
+                return
+            }
+            completion("")
+            return
+            
+        }).resume()
     }
     
 }

@@ -1,15 +1,15 @@
 //
-//  ImageViewController.swift
-//  MenuLateral_Final
+//  TagsViewController.swift
+//  iJournal
 //
-//  Created by Luis Rollon Gordo on 6/10/16.
-//  Copyright © 2016 EfectoApple. All rights reserved.
+//  Created by Carlos Javier Pendola on 5/3/19.
+//  Copyright © 2019 Carlos Javier Pendola. All rights reserved.
 //
 
 import UIKit
 
-class ImageViewController: UIViewController {
-    
+class TagsViewController: UIViewController {
+
     @IBOutlet weak var menuButton:UIBarButtonItem!
     
     override func viewDidLoad() {
@@ -20,12 +20,10 @@ class ImageViewController: UIViewController {
             menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
-        
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "showTagsMenu"), object: nil)
     }
-    
 }

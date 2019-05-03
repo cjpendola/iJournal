@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8VD-UR-bhm">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Export-->
+        <scene sceneID="KLK-wP-xUG">
+            <objects>
+                <viewController id="tfo-eh-oCu" customClass="ExportViewController" customModule="iJournal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1WO-lg-3x1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WU0-AA-j3W">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lXr-6b-85e" firstAttribute="trailing" secondItem="WU0-AA-j3W" secondAttribute="trailing" id="4jA-3d-KDh"/>
+                            <constraint firstItem="lXr-6b-85e" firstAttribute="trailing" secondItem="WU0-AA-j3W" secondAttribute="trailing" id="V9g-20-2yC"/>
+                            <constraint firstItem="lXr-6b-85e" firstAttribute="bottom" secondItem="WU0-AA-j3W" secondAttribute="bottom" id="c43-7o-Izk"/>
+                            <constraint firstItem="lXr-6b-85e" firstAttribute="bottom" secondItem="WU0-AA-j3W" secondAttribute="bottom" id="eqb-Q2-YRQ"/>
+                            <constraint firstItem="WU0-AA-j3W" firstAttribute="leading" secondItem="lXr-6b-85e" secondAttribute="leading" id="gPZ-d8-d7S"/>
+                            <constraint firstItem="WU0-AA-j3W" firstAttribute="leading" secondItem="lXr-6b-85e" secondAttribute="leading" id="hQ4-pV-6TM"/>
+                            <constraint firstItem="WU0-AA-j3W" firstAttribute="top" secondItem="lXr-6b-85e" secondAttribute="top" id="jVP-NQ-uXH"/>
+                            <constraint firstItem="WU0-AA-j3W" firstAttribute="top" secondItem="lXr-6b-85e" secondAttribute="top" id="vUF-iL-5h5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lXr-6b-85e"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Export" id="RVQ-1q-HNu">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="dwC-gf-ACm"/>
+                        <barButtonItem key="rightBarButtonItem" title="PDF" id="4Bp-Cg-m1r">
+                            <connections>
+                                <action selector="exportToPDF:" destination="tfo-eh-oCu" id="pks-6w-X4z"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="menuButton" destination="dwC-gf-ACm" id="pfR-hh-EJc"/>
+                        <outlet property="webPreview" destination="WU0-AA-j3W" id="RzU-pa-Qn5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8So-np-rV3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4934.7826086956529" y="1157.8125"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="a73-w4-BVh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8VD-UR-bhm" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="AtZ-yD-Jbh">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tfo-eh-oCu" kind="relationship" relationship="rootViewController" id="Rjg-wl-cFk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="znB-0O-AqK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4024.6376811594205" y="1157.8125"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="menu" width="22" height="22"/>
+    </resources>
+</document>
