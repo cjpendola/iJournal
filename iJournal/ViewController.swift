@@ -14,7 +14,7 @@ class ViewController: UIViewController {
         print("ViewController viewDidLoad")
         super.viewDidLoad()
         
-        FirebaseManager.shared.addEntry { (success) in
+        /*FirebaseManager.shared.addEntry { (success) in
             if(success){
                 print("firebase")
             }
@@ -25,7 +25,7 @@ class ViewController: UIViewController {
             if(success){
                 print("get firebase")
             }
-        }
+        }*/
     }
     
 

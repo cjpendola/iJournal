@@ -89,7 +89,7 @@ class ScrollingStackViewController: UIViewController, UIImagePickerControllerDel
         view.addSubview(recordButton)*/
         
         startRecording()
-        let timer2 = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false) { timer in
+        let _ = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false) { timer in
             print("Timer fired!")
             self.finishRecording(success: true)
         }

@@ -11,13 +11,9 @@ import UIKit
 class WalkthroughContentViewController: UIViewController {
   
   // MARK: - Properties
-  @IBOutlet var headingLabel: UILabel! {
-    didSet {
-      headingLabel.numberOfLines = 0
-    }
-  }
   
-  @IBOutlet var subHeadingLabel: UILabel! {
+    @IBOutlet weak var logoRiteTop: UIImageView!
+    @IBOutlet var subHeadingLabel: UILabel! {
     didSet {
       subHeadingLabel.numberOfLines = 0
     }
@@ -26,7 +22,6 @@ class WalkthroughContentViewController: UIViewController {
   @IBOutlet var contentImageView: UIImageView!
   
   var index = 0
-  var heading = ""
   var subheading = ""
   var imageFile = ""
   
@@ -34,12 +29,16 @@ class WalkthroughContentViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    headingLabel.text = heading
     subHeadingLabel.text = subheading
     contentImageView.image = UIImage(named: imageFile)
     
     view.backgroundColor = UIColor.clear
     view.isOpaque = false
+    
+    if(index == 0){
+        self.logoRiteTop.isOpaque = true
+        self.logoRiteTop.alpha = 0
+    }
   }
   
 }

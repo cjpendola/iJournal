@@ -10,43 +10,48 @@ import UIKit
 
 class WalkthroughViewController: UIViewController, WalkthroughPageViewControllerDelegate {
     
+    
     // MARK: - Properties
     @IBOutlet var pageControl: UIPageControl!
-    @IBOutlet var nextButton: UIButton! {
+    
+    
+    
+    @IBOutlet weak var signupButton: UIButton!{
         didSet {
-            nextButton.layer.cornerRadius = 25.0
-            nextButton.layer.masksToBounds = true
+            signupButton.layer.masksToBounds = true
+            signupButton.layer.borderColor = UIColor.black.cgColor
+            signupButton.layer.borderWidth = 1
         }
     }
-    @IBOutlet var skipButton: UIButton!
+    @IBOutlet weak var loginButton: UIButton!
+        {
+        didSet {
+            loginButton.layer.masksToBounds = true
+            loginButton.layer.borderColor = UIColor.black.cgColor
+            loginButton.layer.borderWidth = 1
+        }
+    }
     
     var walkthroughPageViewController: WalkthroughPageViewController?
     
     // MARK: - Action Methods
-    @IBAction func skipButtonTapped(sender: UIButton) {
-        self.continueLogin()
-    }
-    
-    @IBAction func nextButtonTapped(sender: UIButton) {
-        if let index = walkthroughPageViewController?.currentIndex {
-            switch index {
-            case 0...1:
-                walkthroughPageViewController?.forwardPage()
-            case 2:
-                self.continueLogin()
-            default:
-                break
-            }
-        }
-        updateUI()
-    }
-    
-    func continueLogin(){
+    @IBAction func signupButtonTapped(_ sender: Any) {
+        print("signupButtonTapped")
         UserDefaults.standard.set(true, forKey: "hasViewedWalkthrough")
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if let loginViewController = storyboard.instantiateViewController(withIdentifier: "loginSB") as? LoginViewController {
+        if let signUpViewController = storyboard.instantiateViewController(withIdentifier: "signupPage") as? SignUpViewController {
+            //self.navigationController?.pushViewController(signUpViewController, animated: true)
+            self.present(signUpViewController, animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func loginButtonTapped(_ sender: Any) {
+        print("loginButtonTapped")
+        UserDefaults.standard.set(true, forKey: "hasViewedWalkthrough")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let loginViewController = storyboard.instantiateViewController(withIdentifier: "loginPage") as? LoginViewController {
             self.present(loginViewController, animated: true, completion: nil)
-            //self.show(loginViewController, sender: self)
+            //self.navigationController?.pushViewController(loginViewController, animated: true)
         }
     }
     
@@ -54,36 +59,9 @@ class WalkthroughViewController: UIViewController, WalkthroughPageViewController
         super.viewDidDisappear(animated)
     }
     
-    func updateUI() {
-        if let index = walkthroughPageViewController?.currentIndex {
-            switch index {
-            case 0...1:
-                nextButton.setTitle("NEXT", for: .normal)
-                skipButton.isHidden = false
-            case 2:
-                nextButton.setTitle("GET STARTED", for: .normal)
-                skipButton.isHidden = true
-            default:
-                break
-            }
-            
-            pageControl.currentPage = index
-        }
-    }
-    
     // MARK: - View controller life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "background")
-        backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
-        self.view.insertSubview(backgroundImage, at: 0)
-    }
-    
-    // MARK: - WalkthroughPageViewControllerDelegate
-    func didUpdatePageIndex(currentIndex: Int) {
-        updateUI()
     }
     
     // MARK: - Navigation
@@ -92,6 +70,16 @@ class WalkthroughViewController: UIViewController, WalkthroughPageViewController
         if let pageViewController = destination as? WalkthroughPageViewController {
             walkthroughPageViewController = pageViewController
             walkthroughPageViewController?.walkthroughDelegate = self
+        }
+    }
+    
+    func didUpdatePageIndex(currentIndex: Int) {
+        updateUI()
+    }
+    
+    func updateUI() {
+        if let index = walkthroughPageViewController?.currentIndex {
+            pageControl.currentPage = index
         }
     }
 }

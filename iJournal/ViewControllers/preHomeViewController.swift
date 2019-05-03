@@ -8,7 +8,6 @@
 
 import UIKit
 import Firebase
-//import GoogleSignIn
 import UserNotifications
 
 class preHomeViewController: UIViewController {
@@ -16,7 +15,6 @@ class preHomeViewController: UIViewController {
     var listenerHandle: AuthStateDidChangeListenerHandle?
     
     var profile: UserProfile?
-    var count = 0
     
     override func viewDidLoad() {
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
@@ -31,23 +29,19 @@ class preHomeViewController: UIViewController {
         UNUserNotificationCenter.current().removeAllDeliveredNotifications()
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         listenerHandle = Auth.auth().addStateDidChangeListener { (auth, user) in
-            // React to authorization state changes here. This is specific to this VC
             if user != nil {
                 print("User is logged in.")
                 FirebaseManager.shared.fetchLoggedInUserProfile(completion: { (success) in
                     if success {
                         print("Successfully fetched user profile")
-                        if(self.count == 0){
-                            self.count += 1
-                            self.gotoUserHome()
-                        }
+                        self.gotoUserHome()
                     } else {
                         print("There was an issue fetching user profile")
                     }
                 })
                 return
             }
-            print("No user currently logged in. Onboarding!")
+            print("No user currently logged in. Onboarding!!!")
             FirebaseManager.shared.loggedInUserProfile = nil
             let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
             if let walkthroughViewController = storyboard.instantiateViewController(withIdentifier: "WalkthroughViewController") as? WalkthroughViewController {
@@ -73,7 +67,7 @@ class preHomeViewController: UIViewController {
     
     func gotoUserHome(){
         let storyboard = UIStoryboard(name: "Home", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "entry")
+        let controller = storyboard.instantiateViewController(withIdentifier: "home")
         self.present(controller, animated: true, completion: nil)
     }
 }
