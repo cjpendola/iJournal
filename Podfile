@@ -12,6 +12,10 @@ target 'iJournal' do
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
   pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
+  pod 'PopupDialog'
+  pod 'JGProgressHUD'
+  pod 'MaterialComponents'
 
 end
 
