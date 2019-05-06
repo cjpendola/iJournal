@@ -65,11 +65,11 @@ class Entry {
         
         let id  = documentSnapshot.documentID
         var element : [Element] = [Element]()
-        for elem in content{
-            if let newEl = Element(elem){
+        /*for elem in content{
+            if let newEl = Element(info: Any, file: <#T##TypeInfo#>)
                 element.append(newEl)
             }
-        }
+        }*/
         let documentReference = FirebaseManager.shared.db.collection("entries").document(documentSnapshot.documentID)
         self.init(title:title, content:element, date:date.dateValue(), tags:tags, profile_id: profile_id, documentRef: documentReference, documentID:id)
     }

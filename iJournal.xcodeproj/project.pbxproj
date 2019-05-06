@@ -52,6 +52,8 @@
 		34B19D4C227CA8E700595E47 /* ExportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B19D4B227CA8E700595E47 /* ExportViewController.swift */; };
 		34B19D4E227CADE400595E47 /* Tags.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34B19D4D227CADE400595E47 /* Tags.storyboard */; };
 		34B19D50227CAE4600595E47 /* TagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B19D4F227CAE4600595E47 /* TagsViewController.swift */; };
+		34BE69802280DEAB004ECABD /* TextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE697F2280DEAB004ECABD /* TextTableViewCell.swift */; };
+		34BE69822280DECD004ECABD /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE69812280DECD004ECABD /* ImageTableViewCell.swift */; };
 		34CC5FF7227358DB005FA540 /* Voiceaudio.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34CC5FF6227358DB005FA540 /* Voiceaudio.xib */; };
 		34CC5FF922735AE1005FA540 /* Voiceaudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CC5FF822735AE1005FA540 /* Voiceaudio.swift */; };
 		34CC5FFD2273A4CD005FA540 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CC5FFC2273A4CD005FA540 /* TestViewController.swift */; };
@@ -167,6 +169,8 @@
 		34B19D4B227CA8E700595E47 /* ExportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportViewController.swift; sourceTree = "<group>"; };
 		34B19D4D227CADE400595E47 /* Tags.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tags.storyboard; sourceTree = "<group>"; };
 		34B19D4F227CAE4600595E47 /* TagsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsViewController.swift; sourceTree = "<group>"; };
+		34BE697F2280DEAB004ECABD /* TextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTableViewCell.swift; sourceTree = "<group>"; };
+		34BE69812280DECD004ECABD /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
 		34C96D022270D3FF00B13050 /* iJournal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iJournal.entitlements; sourceTree = "<group>"; };
 		34CC5FF6227358DB005FA540 /* Voiceaudio.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Voiceaudio.xib; sourceTree = "<group>"; };
 		34CC5FF822735AE1005FA540 /* Voiceaudio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Voiceaudio.swift; sourceTree = "<group>"; };
@@ -410,6 +414,8 @@
 				34F0E1902278DD5F00794F94 /* ArchiveCollectionViewCell.swift */,
 				34E1A1A8227A363B00A7DD8B /* SearchTableViewCell.swift */,
 				34092CF1227BCF6700F5FA89 /* UIImage.swift */,
+				34BE697F2280DEAB004ECABD /* TextTableViewCell.swift */,
+				34BE69812280DECD004ECABD /* ImageTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -769,6 +775,7 @@
 				3407231A2272152400C95659 /* WalkthroughPageViewController.swift in Sources */,
 				34F0E1852278B39200794F94 /* String.swift in Sources */,
 				3407231E22721D3E00C95659 /* FirebaseManager.swift in Sources */,
+				34BE69822280DECD004ECABD /* ImageTableViewCell.swift in Sources */,
 				34F0E1872278B8A600794F94 /* YearViewCell.swift in Sources */,
 				3407232222721ED600C95659 /* UserProfile.swift in Sources */,
 				34B19D4A227CA8DD00595E47 /* SettingsViewViewController.swift in Sources */,
@@ -778,6 +785,7 @@
 				34F0E1892278B94C00794F94 /* CalendarModel.swift in Sources */,
 				340723122272151B00C95659 /* preHomeViewController.swift in Sources */,
 				34F0E1912278DD5F00794F94 /* ArchiveCollectionViewCell.swift in Sources */,
+				34BE69802280DEAB004ECABD /* TextTableViewCell.swift in Sources */,
 				341586E1227E3A5F0043E1BB /* ExpandableHeader.swift in Sources */,
 				3407232F22721FA100C95659 /* Geodistance.swift in Sources */,
 				3407233322721FA100C95659 /* HideKeyBoardOnTapAround.swift in Sources */,
