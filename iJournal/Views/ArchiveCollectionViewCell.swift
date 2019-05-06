@@ -9,9 +9,6 @@
 import UIKit
 
 class ArchiveCollectionViewCell: UICollectionViewCell {
-    
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-    
-    
 }

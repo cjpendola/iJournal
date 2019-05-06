@@ -29,6 +29,10 @@
 		3407233322721FA100C95659 /* HideKeyBoardOnTapAround.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3407232B22721FA100C95659 /* HideKeyBoardOnTapAround.swift */; };
 		340723352272207F00C95659 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 340723342272207F00C95659 /* Home.storyboard */; };
 		34092CF2227BCF6700F5FA89 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34092CF1227BCF6700F5FA89 /* UIImage.swift */; };
+		340BA317227E570700273312 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340BA316227E570700273312 /* SearchViewController.swift */; };
+		340BA319227E6D5400273312 /* NSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340BA318227E6D5400273312 /* NSMutableAttributedString.swift */; };
+		341586DF227E3A420043E1BB /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341586DE227E3A420043E1BB /* Section.swift */; };
+		341586E1227E3A5F0043E1BB /* ExpandableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341586E0227E3A5F0043E1BB /* ExpandableHeader.swift */; };
 		346B139C2270D02E00A79B66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346B139B2270D02E00A79B66 /* AppDelegate.swift */; };
 		346B139E2270D02E00A79B66 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346B139D2270D02E00A79B66 /* ViewController.swift */; };
 		346B13A32270D02F00A79B66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 346B13A22270D02F00A79B66 /* Assets.xcassets */; };
@@ -55,11 +59,7 @@
 		34CC60012273AB26005FA540 /* CellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CC60002273AB26005FA540 /* CellCollectionViewCell.swift */; };
 		34D532772277B34F008DD483 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D532762277B34F008DD483 /* UIView.swift */; };
 		34D532842277D0A8008DD483 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D532832277D0A8008DD483 /* SWRevealViewController.m */; };
-		34D5328B2277D11F008DD483 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D532862277D11F008DD483 /* ImageViewController.swift */; };
-		34D5328C2277D11F008DD483 /* TutorialsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D532872277D11F008DD483 /* TutorialsTableViewController.swift */; };
-		34D5328D2277D11F008DD483 /* TutorialsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D532882277D11F008DD483 /* TutorialsTableViewCell.swift */; };
 		34D5328E2277D11F008DD483 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D532892277D11F008DD483 /* MenuViewController.swift */; };
-		34D5328F2277D11F008DD483 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D5328A2277D11F008DD483 /* MapViewController.swift */; };
 		34DEA8C22272576400B8BB98 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DEA8C12272576400B8BB98 /* Entry.swift */; };
 		34DEA8C422726DE100B8BB98 /* EntryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DEA8C322726DE100B8BB98 /* EntryTableViewController.swift */; };
 		34DEA8C72272706B00B8BB98 /* ScrollingStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DEA8C62272706B00B8BB98 /* ScrollingStackViewController.swift */; };
@@ -141,6 +141,10 @@
 		3407232B22721FA100C95659 /* HideKeyBoardOnTapAround.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HideKeyBoardOnTapAround.swift; sourceTree = "<group>"; };
 		340723342272207F00C95659 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		34092CF1227BCF6700F5FA89 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		340BA316227E570700273312 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		340BA318227E6D5400273312 /* NSMutableAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedString.swift; sourceTree = "<group>"; };
+		341586DE227E3A420043E1BB /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		341586E0227E3A5F0043E1BB /* ExpandableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableHeader.swift; sourceTree = "<group>"; };
 		346B13982270D02E00A79B66 /* iJournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iJournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		346B139B2270D02E00A79B66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		346B139D2270D02E00A79B66 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -173,11 +177,7 @@
 		34D532822277D0A8008DD483 /* iJournal-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iJournal-Bridging-Header.h"; sourceTree = "<group>"; };
 		34D532832277D0A8008DD483 /* SWRevealViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		34D532852277D0D1008DD483 /* SWRevealViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
-		34D532862277D11F008DD483 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
-		34D532872277D11F008DD483 /* TutorialsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialsTableViewController.swift; sourceTree = "<group>"; };
-		34D532882277D11F008DD483 /* TutorialsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialsTableViewCell.swift; sourceTree = "<group>"; };
 		34D532892277D11F008DD483 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		34D5328A2277D11F008DD483 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		34DEA8C12272576400B8BB98 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		34DEA8C322726DE100B8BB98 /* EntryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableViewController.swift; sourceTree = "<group>"; };
 		34DEA8C62272706B00B8BB98 /* ScrollingStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingStackViewController.swift; sourceTree = "<group>"; };
@@ -279,6 +279,7 @@
 				34B19D49227CA8DD00595E47 /* SettingsViewViewController.swift */,
 				34B19D4B227CA8E700595E47 /* ExportViewController.swift */,
 				34B19D4F227CAE4600595E47 /* TagsViewController.swift */,
+				340BA316227E570700273312 /* SearchViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -325,6 +326,7 @@
 				3407232622721FA000C95659 /* SSBadgeButton.swift */,
 				3407232A22721FA100C95659 /* Views.swift */,
 				34F0E1842278B39200794F94 /* String.swift */,
+				340BA318227E6D5400273312 /* NSMutableAttributedString.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -418,11 +420,9 @@
 				34D532852277D0D1008DD483 /* SWRevealViewController.h */,
 				34D532832277D0A8008DD483 /* SWRevealViewController.m */,
 				34D532822277D0A8008DD483 /* iJournal-Bridging-Header.h */,
-				34D532862277D11F008DD483 /* ImageViewController.swift */,
-				34D5328A2277D11F008DD483 /* MapViewController.swift */,
 				34D532892277D11F008DD483 /* MenuViewController.swift */,
-				34D532882277D11F008DD483 /* TutorialsTableViewCell.swift */,
-				34D532872277D11F008DD483 /* TutorialsTableViewController.swift */,
+				341586DE227E3A420043E1BB /* Section.swift */,
+				341586E0227E3A5F0043E1BB /* ExpandableHeader.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -758,21 +758,18 @@
 				34F0E1982278DDCE00794F94 /* Element.swift in Sources */,
 				3407233122721FA100C95659 /* GreyImage.swift in Sources */,
 				34CC5FF922735AE1005FA540 /* Voiceaudio.swift in Sources */,
+				341586DF227E3A420043E1BB /* Section.swift in Sources */,
 				34B19D4C227CA8E700595E47 /* ExportViewController.swift in Sources */,
 				34D532842277D0A8008DD483 /* SWRevealViewController.m in Sources */,
 				3407232E22721FA100C95659 /* SSBadgeButton.swift in Sources */,
 				34D5328E2277D11F008DD483 /* MenuViewController.swift in Sources */,
-				34D5328C2277D11F008DD483 /* TutorialsTableViewController.swift in Sources */,
 				340723192272152400C95659 /* WalkthroughViewController.swift in Sources */,
 				3407231F22721D3E00C95659 /* PushNotificationManager.swift in Sources */,
 				34B19D50227CAE4600595E47 /* TagsViewController.swift in Sources */,
 				3407231A2272152400C95659 /* WalkthroughPageViewController.swift in Sources */,
 				34F0E1852278B39200794F94 /* String.swift in Sources */,
-				34D5328B2277D11F008DD483 /* ImageViewController.swift in Sources */,
 				3407231E22721D3E00C95659 /* FirebaseManager.swift in Sources */,
 				34F0E1872278B8A600794F94 /* YearViewCell.swift in Sources */,
-				34D5328D2277D11F008DD483 /* TutorialsTableViewCell.swift in Sources */,
-				34D5328F2277D11F008DD483 /* MapViewController.swift in Sources */,
 				3407232222721ED600C95659 /* UserProfile.swift in Sources */,
 				34B19D4A227CA8DD00595E47 /* SettingsViewViewController.swift in Sources */,
 				34DEA8C72272706B00B8BB98 /* ScrollingStackViewController.swift in Sources */,
@@ -781,6 +778,7 @@
 				34F0E1892278B94C00794F94 /* CalendarModel.swift in Sources */,
 				340723122272151B00C95659 /* preHomeViewController.swift in Sources */,
 				34F0E1912278DD5F00794F94 /* ArchiveCollectionViewCell.swift in Sources */,
+				341586E1227E3A5F0043E1BB /* ExpandableHeader.swift in Sources */,
 				3407232F22721FA100C95659 /* Geodistance.swift in Sources */,
 				3407233322721FA100C95659 /* HideKeyBoardOnTapAround.swift in Sources */,
 				3407232C22721FA100C95659 /* Date.swift in Sources */,
@@ -793,10 +791,12 @@
 				340723182272152400C95659 /* WalkthroughContentViewController.swift in Sources */,
 				34E1A1A9227A363B00A7DD8B /* SearchTableViewCell.swift in Sources */,
 				34CC5FFD2273A4CD005FA540 /* TestViewController.swift in Sources */,
+				340BA317227E570700273312 /* SearchViewController.swift in Sources */,
 				34F0E18D2278C95600794F94 /* MonthViewCell.swift in Sources */,
 				34F0E19C2278DE8A00794F94 /* EditEntryViewController.swift in Sources */,
 				340723142272151C00C95659 /* LoginViewController.swift in Sources */,
 				34DEA8C422726DE100B8BB98 /* EntryTableViewController.swift in Sources */,
+				340BA319227E6D5400273312 /* NSMutableAttributedString.swift in Sources */,
 				346B139C2270D02E00A79B66 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

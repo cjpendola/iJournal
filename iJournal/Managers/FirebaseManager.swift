@@ -19,7 +19,6 @@ import CoreLocation
 
 class FirebaseManager {
     
-    let my_firebase_storage_bucket = "tiki-31a2e.appspot.com"
     let db = Firestore.firestore()
     // MARK: - Shared instance
     static let shared = FirebaseManager()
@@ -588,7 +587,7 @@ class FirebaseManager {
                 return
         }
         
-        print(profileRef)
+        //print(profileRef)
         db.collection("entries").whereField("profile_id", isEqualTo: profileRef).addSnapshotListener { (querySnapshot, error) in
             if querySnapshot?.documents == nil || error != nil {
                 print("Error querying entries: \((error, error!.localizedDescription))")
@@ -601,7 +600,7 @@ class FirebaseManager {
                     }
                 }
                 
-                dump(self.userEntries)
+                //dump(self.userEntries)
                 completion(true)
             }
         }

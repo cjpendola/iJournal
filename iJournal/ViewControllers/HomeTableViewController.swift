@@ -37,12 +37,12 @@ class HomeTableViewController: UITableViewController, UICollectionViewDataSource
     
     override func viewDidLoad() {
         
-        searchController.searchResultsUpdater = self
+        /*searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search Entries"
         navigationItem.searchController = searchController
         definesPresentationContext = true
-        searchController.searchBar.delegate = self
+        searchController.searchBar.delegate = self*/
         
         super.viewDidLoad()
         self.archiveView.dataSource = self
@@ -58,7 +58,6 @@ class HomeTableViewController: UITableViewController, UICollectionViewDataSource
             if(success)
             {
                 DispatchQueue.main.async {
-                    
                     if(FirebaseManager.shared.userEntries.count > 0){
                         self.dateCenterLabel.text  = FirebaseManager.shared.userEntries[0].date?.string(with: "MM dd yyyy")
                         self.titleCenterLabel.text = "Wrote about '\(FirebaseManager.shared.userEntries[0].title)'"

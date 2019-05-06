@@ -33,13 +33,12 @@ class SearchTableViewCell: UITableViewCell {
         dateLabel.text  = entry.date?.string(with: "MM dd yyyy")
         titleLabel.text = "Wrote about '\(entry.title)'"
         if let tags = entry.tags{
-            tagsLabel.text  = "Other tags '\( tags.joined(separator:",") )"
+            tagsLabel.text  = "Other tags ' \( tags.joined(separator:",") ) '"
         }
         else{
             tagsLabel.text = ""
         }
     }
-    
     
     func getDayOfWeek(_ today:String) -> Int? {
         let formatter  = DateFormatter()
