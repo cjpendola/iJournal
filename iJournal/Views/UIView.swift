@@ -8,7 +8,6 @@
 import UIKit
 
 extension UIView {
-    
     func anchor(top: NSLayoutYAxisAnchor?, leading: NSLayoutXAxisAnchor?, trailing: NSLayoutXAxisAnchor?, bottom: NSLayoutYAxisAnchor?, padding: UIEdgeInsets = .zero, size: CGSize = .zero) {
         
         translatesAutoresizingMaskIntoConstraints = false

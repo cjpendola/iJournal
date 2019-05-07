@@ -35,8 +35,6 @@ class ExportViewController: UIViewController {
     }
     
     // MARK: IBAction Methods
-    
-    
     @IBAction func exportToPDF(_ sender: AnyObject) {
         invoiceComposer.exportHTMLContentToPDF(HTMLContent: HTMLContent)
         showOptionsAlert()

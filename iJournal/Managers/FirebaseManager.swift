@@ -19,7 +19,6 @@ import CoreLocation
 
 class FirebaseManager {
     
-    let my_firebase_storage_bucket = "tiki-31a2e.appspot.com"
     let db = Firestore.firestore()
     // MARK: - Shared instance
     static let shared = FirebaseManager()
@@ -478,7 +477,6 @@ class FirebaseManager {
         
         elements = content
         dispatchGroup.enter()
-        
         checkContent(ele:elements[countElement])
         dispatchGroup.notify(queue: .main) {
             let entry =  Entry(title: title, content: self.newElements, date: nil,  profile_id: loggedInUserProfile, documentRef: nil, documentID: "")
@@ -496,39 +494,54 @@ class FirebaseManager {
         }
     }
     
-    
-    
     func checkContent(ele:Element){
         print("checkContent")
         print(elements.count)
         print(countElement)
-        
-        if(countElement < elements.count - 1 ){
-            if let info = ele.info as? UIImage{
-                let uniqueID = NSUUID().uuidString
-                uploadImage(image: info, uniqueID:uniqueID ) { (imgUrl) in
-                    self.newElements.append( Element(info: imgUrl, file:.image ) )
-                    self.countElement += 1
+        if let info = ele.info as? UIImage{
+            let uniqueID = NSUUID().uuidString
+            uploadImage(image: info, uniqueID:uniqueID ) { (imgUrl) in
+                self.newElements.append( Element(info: imgUrl, file:.image ) )
+                self.countElement += 1
+                
+                if(self.countElement != self.elements.count){
                     self.checkContent(ele:self.elements[self.countElement])
                 }
-                /*uploadToCatBox(image: info, uniqueID:uniqueID ) { (imgUrl) in
-                    self.newElements.append( Element(info: imgUrl, file:.image ) )
-                    self.countElement += 1
-                    self.checkContent(ele:self.elements[self.countElement])
-                }*/
-            }
-            else{
-                if let info = ele.info as? String{
-                    if(info != ""){
-                        newElements.append( Element(info: info, file:.text ) )
-                    }
-                    self.countElement += 1
-                    self.checkContent(ele:self.elements[self.countElement])
+                else{
+                    self.dispatchGroup.leave()
                 }
             }
         }
         else{
-            dispatchGroup.leave()
+            if let info = ele.info as? String{
+                if(ele.file == .image ){
+                    if(info != ""){
+                        newElements.append( Element(info: info, file:.image ) )
+                    }
+                    self.countElement += 1
+                    
+                    if(self.countElement != self.elements.count){
+                        self.checkContent(ele:self.elements[self.countElement])
+                    }
+                    else{
+                        self.dispatchGroup.leave()
+                    }
+                }
+                else{
+                    if(info != ""){
+                        newElements.append( Element(info: info, file:.text ) )
+                    }
+                    self.countElement += 1
+                    
+                    if(self.countElement != self.elements.count){
+                        self.checkContent(ele:self.elements[self.countElement])
+                    }
+                    else{
+                        self.dispatchGroup.leave()
+                    }
+                }
+                
+            }
         }
         
     }
@@ -588,7 +601,7 @@ class FirebaseManager {
                 return
         }
         
-        print(profileRef)
+        //print(profileRef)
         db.collection("entries").whereField("profile_id", isEqualTo: profileRef).addSnapshotListener { (querySnapshot, error) in
             if querySnapshot?.documents == nil || error != nil {
                 print("Error querying entries: \((error, error!.localizedDescription))")
@@ -601,7 +614,7 @@ class FirebaseManager {
                     }
                 }
                 
-                dump(self.userEntries)
+                //dump(self.userEntries)
                 completion(true)
             }
         }
