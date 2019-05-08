@@ -12,17 +12,26 @@ import MessageUI
 class ExportViewController: UIViewController {
 
     @IBOutlet weak var menuButton:UIBarButtonItem!
-    
     @IBOutlet weak var webPreview: UIWebView!
     
     var invoiceInfo: [String: AnyObject]!
     var invoiceComposer: InvoiceComposer!
     var HTMLContent: String!
     
+    var entry:Entry?
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         NotificationCenter.default.post(name: Notification.Name(rawValue: "showExportMenu"), object: nil)
-        createInvoiceAsHTML()
+        
+        FirebaseManager.shared.getUserEntries { (success) in
+            if(success){
+                if(FirebaseManager.shared.userEntries.count > 0){
+                    self.entry = FirebaseManager.shared.userEntries[0]
+                    self.createInvoiceAsHTML()
+                }
+            }
+        }
     }
     
     override func viewDidLoad() {
@@ -45,11 +54,8 @@ class ExportViewController: UIViewController {
     
     func createInvoiceAsHTML() {
         invoiceComposer = InvoiceComposer()
-        if let invoiceHTML = invoiceComposer.renderInvoice(invoiceNumber: invoiceInfo["invoiceNumber"] as! String,
-                                                           invoiceDate: invoiceInfo["invoiceDate"] as! String,
-                                                           recipientInfo: invoiceInfo["recipientInfo"] as! String,
-                                                           items: invoiceInfo["items"] as! [[String: String]],
-                                                           totalAmount: invoiceInfo["totalAmount"] as! String) {
+        
+        if let invoiceHTML = invoiceComposer.renderInvoice(entry:entry!) {
             
             webPreview.loadHTMLString(invoiceHTML, baseURL: NSURL(string: invoiceComposer.pathToInvoiceHTMLTemplate!)! as URL)
             HTMLContent = invoiceHTML

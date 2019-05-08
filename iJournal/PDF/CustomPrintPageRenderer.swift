@@ -85,7 +85,7 @@ class CustomPrintPageRenderer: UIPrintPageRenderer {
     
     func getTextSize(text: String, font: UIFont!, textAttributes: [String: AnyObject]! = nil) -> CGSize {
         let testLabel = UILabel(frame: CGRect(x: 0.0, y: 0.0, width: self.paperRect.size.width, height: footerHeight))
-        if let attributes = textAttributes {
+        if let _ = textAttributes {
             //testLabel.attributedText = NSAttributedString(string: text, attributes: attributes)//CJFIX
         }
         else {
