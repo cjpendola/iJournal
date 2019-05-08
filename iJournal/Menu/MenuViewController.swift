@@ -16,9 +16,36 @@ class MenuViewController: UITableViewController,ExpandableHeaderViewDelegate {
     @IBOutlet weak var archiveLabel: UILabel!
     @IBOutlet weak var settingsLabel: UILabel!*/
     
+    var sections = [
+        Section(name: "Home", tags: [], expanded: false),
+        Section(name: "Archives", tags: [], expanded: false),
+        Section(name: "Tags", tags: [], expanded: false),
+        Section(name: "Export", tags: [], expanded: false),
+        Section(name: "Settings", tags: [], expanded: false),
+        //Section(name: "Log Out", tags: [], expanded: false)
+    ]
+    
+    var tags : [String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.separatorStyle = .none
+        
+        
+        FirebaseManager.shared.getUserEntries { (success) in
+            if(success){
+                for users in FirebaseManager.shared.userEntries{
+                    if let tags = users.tags{
+                        self.tags = self.tags + tags
+                    }
+                }
+                self.sections[2].tags = self.tags
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+                
+            }
+        }
         
         //homeLabel.textColor = UIColor(red:1, green:0.4, blue:0.32, alpha:1)
         
@@ -70,14 +97,16 @@ class MenuViewController: UITableViewController,ExpandableHeaderViewDelegate {
         }
     }*/
     
-    var sections = [
-        Section(name: "Home", tags: [], expanded: false),
-        Section(name: "Archives", tags: [], expanded: false),
-        Section(name: "Tags", tags: ["Tags1", "Tags2", "Tags3", "Tags4"], expanded: false),
-        Section(name: "Export", tags: [], expanded: false),
-        Section(name: "Settings", tags: [], expanded: false),
-        Section(name: "Log Out", tags: [], expanded: false)
-    ]
+    override func viewDidAppear(_ animated: Bool) {
+        self.tags = []
+        for users in FirebaseManager.shared.userEntries{
+            if let tags = users.tags{
+                self.tags = self.tags + tags
+            }
+        }
+        self.sections[2].tags = self.tags
+        self.tableView.reloadData()
+    }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
@@ -146,6 +175,17 @@ class MenuViewController: UITableViewController,ExpandableHeaderViewDelegate {
                 tableView.reloadRows(at: [IndexPath(row: i, section: section)], with: .automatic)
             }
             tableView.endUpdates()
+        }
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "passSearchDetail"{
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let section = self.sections[indexPath.section]
+                let searchTag = section.tags[indexPath.row]
+                UserDefaults.standard.set(searchTag, forKey: "tagSelected")
+            }
         }
     }
 }
