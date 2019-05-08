@@ -44,8 +44,8 @@
 		349B042D227CFEA400AF37BE /* InvoiceComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349B042C227CFEA400AF37BE /* InvoiceComposer.swift */; };
 		349B042F227CFF9000AF37BE /* CustomPrintPageRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349B042E227CFF9000AF37BE /* CustomPrintPageRenderer.swift */; };
 		349B0434227CFFF100AF37BE /* invoice.html in Resources */ = {isa = PBXBuildFile; fileRef = 349B0431227CFFF100AF37BE /* invoice.html */; };
-		349B0435227CFFF100AF37BE /* last_item.html in Resources */ = {isa = PBXBuildFile; fileRef = 349B0432227CFFF100AF37BE /* last_item.html */; };
-		349B0436227CFFF100AF37BE /* single_item.html in Resources */ = {isa = PBXBuildFile; fileRef = 349B0433227CFFF100AF37BE /* single_item.html */; };
+		349B0435227CFFF100AF37BE /* image_item.html in Resources */ = {isa = PBXBuildFile; fileRef = 349B0432227CFFF100AF37BE /* image_item.html */; };
+		349B0436227CFFF100AF37BE /* text_item.html in Resources */ = {isa = PBXBuildFile; fileRef = 349B0433227CFFF100AF37BE /* text_item.html */; };
 		34A351AE22810A23003463F9 /* apercu-bold-italic-pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 34A351A122810A21003463F9 /* apercu-bold-italic-pro.otf */; };
 		34A351AF22810A23003463F9 /* apercu-medium-italic-pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 34A351A222810A21003463F9 /* apercu-medium-italic-pro.otf */; };
 		34A351B022810A23003463F9 /* apercu-light-pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 34A351A322810A21003463F9 /* apercu-light-pro.otf */; };
@@ -162,8 +162,8 @@
 		349B042C227CFEA400AF37BE /* InvoiceComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceComposer.swift; sourceTree = "<group>"; };
 		349B042E227CFF9000AF37BE /* CustomPrintPageRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPrintPageRenderer.swift; sourceTree = "<group>"; };
 		349B0431227CFFF100AF37BE /* invoice.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = invoice.html; sourceTree = "<group>"; };
-		349B0432227CFFF100AF37BE /* last_item.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = last_item.html; sourceTree = "<group>"; };
-		349B0433227CFFF100AF37BE /* single_item.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = single_item.html; sourceTree = "<group>"; };
+		349B0432227CFFF100AF37BE /* image_item.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = image_item.html; sourceTree = "<group>"; };
+		349B0433227CFFF100AF37BE /* text_item.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = text_item.html; sourceTree = "<group>"; };
 		34A351A122810A21003463F9 /* apercu-bold-italic-pro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "apercu-bold-italic-pro.otf"; sourceTree = "<group>"; };
 		34A351A222810A21003463F9 /* apercu-medium-italic-pro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "apercu-medium-italic-pro.otf"; sourceTree = "<group>"; };
 		34A351A322810A21003463F9 /* apercu-light-pro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "apercu-light-pro.otf"; sourceTree = "<group>"; };
@@ -400,8 +400,8 @@
 			isa = PBXGroup;
 			children = (
 				349B0431227CFFF100AF37BE /* invoice.html */,
-				349B0432227CFFF100AF37BE /* last_item.html */,
-				349B0433227CFFF100AF37BE /* single_item.html */,
+				349B0432227CFFF100AF37BE /* image_item.html */,
+				349B0433227CFFF100AF37BE /* text_item.html */,
 			);
 			path = HtmlTemplate;
 			sourceTree = "<group>";
@@ -597,10 +597,10 @@
 				34B19D4E227CADE400595E47 /* Tags.storyboard in Resources */,
 				346B13A62270D02F00A79B66 /* LaunchScreen.storyboard in Resources */,
 				34A351B022810A23003463F9 /* apercu-light-pro.otf in Resources */,
-				349B0435227CFFF100AF37BE /* last_item.html in Resources */,
+				349B0435227CFFF100AF37BE /* image_item.html in Resources */,
 				34A351B622810A23003463F9 /* apercu-bold-pro.otf in Resources */,
 				346B13BE2270D1B600A79B66 /* GoogleService-Info.plist in Resources */,
-				349B0436227CFFF100AF37BE /* single_item.html in Resources */,
+				349B0436227CFFF100AF37BE /* text_item.html in Resources */,
 				340723082272128F00C95659 /* preHome.storyboard in Resources */,
 				34A351B722810A23003463F9 /* apercu-light-italic-pro.otf in Resources */,
 				3407230C227212D200C95659 /* Main.storyboard in Resources */,
