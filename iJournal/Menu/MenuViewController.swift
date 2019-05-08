@@ -22,7 +22,7 @@ class MenuViewController: UITableViewController,ExpandableHeaderViewDelegate {
         Section(name: "Tags", tags: [], expanded: false),
         Section(name: "Export", tags: [], expanded: false),
         Section(name: "Settings", tags: [], expanded: false),
-        //Section(name: "Log Out", tags: [], expanded: false)
+        //Section(name: "Log Out", tags: [], expanded: false) 
     ]
     
     var tags : [String] = []
