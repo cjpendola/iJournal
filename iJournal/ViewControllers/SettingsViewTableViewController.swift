@@ -1,17 +1,19 @@
 //
-//  SettingsViewViewController.swift
+//  SettingsViewTableViewController.swift
 //  iJournal
 //
-//  Created by Carlos Javier Pendola on 5/3/19.
+//  Created by Colin Smith on 5/6/19.
 //  Copyright © 2019 Carlos Javier Pendola. All rights reserved.
 //
 
 import UIKit
 
-class SettingsViewViewController: UIViewController {
+class SettingsViewTableViewController: UITableViewController {
 
-    @IBOutlet weak var menuButton:UIBarButtonItem!
-   
+    @IBOutlet weak var menuButton: UIBarButtonItem!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,4 +28,20 @@ class SettingsViewViewController: UIViewController {
         super.viewDidAppear(true)
         NotificationCenter.default.post(name: Notification.Name(rawValue: "showSettingsMenu"), object: nil)
     }
+   
+
+    
+
+   
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
 }
