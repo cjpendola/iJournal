@@ -17,8 +17,18 @@ class TextTableViewCell: UITableViewCell, UITextViewDelegate {
     
     var content: Element? {
         didSet{
-            let string = content?.info as? String
+            guard let string = content?.info as? String else {return}
             textView.text = string
+            /*
+            let style = NSMutableParagraphStyle()
+            style.lineSpacing = 24
+            let font = UIFont.init(name: "apercu-regular-pro", size: 14)
+            let attributes: [NSAttributedString.Key: Any] = [
+                .font: font as Any,
+            .baselineOffset: 24,
+            ]
+           textView.attributedText = NSAttributedString(string: string, attributes: attributes)
+ */
         }
     }
     

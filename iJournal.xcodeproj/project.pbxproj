@@ -61,7 +61,6 @@
 		34A351BA22810A23003463F9 /* apercu-italic-pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 34A351AD22810A23003463F9 /* apercu-italic-pro.otf */; };
 		34B19D46227CA82000595E47 /* Export.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34B19D45227CA82000595E47 /* Export.storyboard */; };
 		34B19D48227CA85900595E47 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34B19D47227CA85900595E47 /* Settings.storyboard */; };
-		34B19D4A227CA8DD00595E47 /* SettingsViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B19D49227CA8DD00595E47 /* SettingsViewViewController.swift */; };
 		34B19D4C227CA8E700595E47 /* ExportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B19D4B227CA8E700595E47 /* ExportViewController.swift */; };
 		34B19D4E227CADE400595E47 /* Tags.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34B19D4D227CADE400595E47 /* Tags.storyboard */; };
 		34B19D50227CAE4600595E47 /* TagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B19D4F227CAE4600595E47 /* TagsViewController.swift */; };
@@ -92,6 +91,10 @@
 		34F0E19A2278DE0C00794F94 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F0E1992278DE0C00794F94 /* HomeTableViewController.swift */; };
 		34F0E19C2278DE8A00794F94 /* EditEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F0E19B2278DE8A00794F94 /* EditEntryViewController.swift */; };
 		8984A8ACAD0E5D81B3C81476 /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E9ACA97FE151EDFAC271D5D /* Pods_OneSignalNotificationServiceExtension.framework */; };
+		AFD7CE532281EEC50094613E /* NotifcationSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD7CE522281EEC50094613E /* NotifcationSettingsViewController.swift */; };
+		AFD7CE552281F6AA0094613E /* RiteNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD7CE542281F6AA0094613E /* RiteNotification.swift */; };
+		AFD7CE572281F7490094613E /* RiteNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD7CE562281F7490094613E /* RiteNotificationController.swift */; };
+		AFE2161C22812092002247E3 /* SettingsViewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE2161B22812092002247E3 /* SettingsViewTableViewController.swift */; };
 		DCCEFF8993A6204B9E0DC19E /* Pods_iJournal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 931BF83D175DE9BCABD4AEBE /* Pods_iJournal.framework */; };
 /* End PBXBuildFile section */
 
@@ -179,7 +182,6 @@
 		34A351AD22810A23003463F9 /* apercu-italic-pro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "apercu-italic-pro.otf"; sourceTree = "<group>"; };
 		34B19D45227CA82000595E47 /* Export.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Export.storyboard; sourceTree = "<group>"; };
 		34B19D47227CA85900595E47 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
-		34B19D49227CA8DD00595E47 /* SettingsViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewViewController.swift; sourceTree = "<group>"; };
 		34B19D4B227CA8E700595E47 /* ExportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportViewController.swift; sourceTree = "<group>"; };
 		34B19D4D227CADE400595E47 /* Tags.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tags.storyboard; sourceTree = "<group>"; };
 		34B19D4F227CAE4600595E47 /* TagsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsViewController.swift; sourceTree = "<group>"; };
@@ -215,6 +217,10 @@
 		7BC17B8E7C1ECB9D5343DD3C /* Pods-iJournal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iJournal.release.xcconfig"; path = "Target Support Files/Pods-iJournal/Pods-iJournal.release.xcconfig"; sourceTree = "<group>"; };
 		8A34DE3C38C0E9B1ABA88389 /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 		931BF83D175DE9BCABD4AEBE /* Pods_iJournal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iJournal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFD7CE522281EEC50094613E /* NotifcationSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifcationSettingsViewController.swift; sourceTree = "<group>"; };
+		AFD7CE542281F6AA0094613E /* RiteNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiteNotification.swift; sourceTree = "<group>"; };
+		AFD7CE562281F7490094613E /* RiteNotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiteNotificationController.swift; sourceTree = "<group>"; };
+		AFE2161B22812092002247E3 /* SettingsViewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewTableViewController.swift; sourceTree = "<group>"; };
 		E8E4FD1F645BC1F61125E855 /* Pods-iJournal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iJournal.debug.xcconfig"; path = "Target Support Files/Pods-iJournal/Pods-iJournal.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -256,11 +262,11 @@
 				340723042272128F00C95659 /* preHome.storyboard */,
 				3407230A227212D200C95659 /* Main.storyboard */,
 				346B13A42270D02F00A79B66 /* LaunchScreen.storyboard */,
-				340723342272207F00C95659 /* Home.storyboard */,
 				349B040B227CD01E00AF37BE /* Archive.storyboard */,
 				34B19D4D227CADE400595E47 /* Tags.storyboard */,
 				34B19D47227CA85900595E47 /* Settings.storyboard */,
 				34B19D45227CA82000595E47 /* Export.storyboard */,
+				340723342272207F00C95659 /* Home.storyboard */,
 				34F0E18E2278DCEC00794F94 /* Rite.storyboard */,
 				34CC5FF6227358DB005FA540 /* Voiceaudio.xib */,
 				34CC5FF822735AE1005FA540 /* Voiceaudio.swift */,
@@ -282,10 +288,11 @@
 				34F0E19B2278DE8A00794F94 /* EditEntryViewController.swift */,
 				34DEA8C322726DE100B8BB98 /* EntryTableViewController.swift */,
 				34CC5FFC2273A4CD005FA540 /* TestViewController.swift */,
-				34B19D49227CA8DD00595E47 /* SettingsViewViewController.swift */,
 				34B19D4B227CA8E700595E47 /* ExportViewController.swift */,
 				34B19D4F227CAE4600595E47 /* TagsViewController.swift */,
 				340BA316227E570700273312 /* SearchViewController.swift */,
+				AFE2161B22812092002247E3 /* SettingsViewTableViewController.swift */,
+				AFD7CE522281EEC50094613E /* NotifcationSettingsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -316,6 +323,7 @@
 				34DEA8C12272576400B8BB98 /* Entry.swift */,
 				34F0E1882278B94C00794F94 /* CalendarModel.swift */,
 				34F0E1972278DDCE00794F94 /* Element.swift */,
+				AFD7CE542281F6AA0094613E /* RiteNotification.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -448,6 +456,7 @@
 			children = (
 				34F0E1932278DD9900794F94 /* EntryController.swift */,
 				34F0E1952278DDAD00794F94 /* ElementController.swift */,
+				AFD7CE562281F7490094613E /* RiteNotificationController.swift */,
 			);
 			path = ModelController;
 			sourceTree = "<group>";
@@ -776,13 +785,15 @@
 				340723192272152400C95659 /* WalkthroughViewController.swift in Sources */,
 				3407231F22721D3E00C95659 /* PushNotificationManager.swift in Sources */,
 				34B19D50227CAE4600595E47 /* TagsViewController.swift in Sources */,
+				AFD7CE532281EEC50094613E /* NotifcationSettingsViewController.swift in Sources */,
 				3407231A2272152400C95659 /* WalkthroughPageViewController.swift in Sources */,
+				AFD7CE552281F6AA0094613E /* RiteNotification.swift in Sources */,
 				34F0E1852278B39200794F94 /* String.swift in Sources */,
 				3407231E22721D3E00C95659 /* FirebaseManager.swift in Sources */,
 				34BE69822280DECD004ECABD /* ImageTableViewCell.swift in Sources */,
 				34F0E1872278B8A600794F94 /* YearViewCell.swift in Sources */,
+				AFD7CE572281F7490094613E /* RiteNotificationController.swift in Sources */,
 				3407232222721ED600C95659 /* UserProfile.swift in Sources */,
-				34B19D4A227CA8DD00595E47 /* SettingsViewViewController.swift in Sources */,
 				34DEA8C72272706B00B8BB98 /* ScrollingStackViewController.swift in Sources */,
 				3407233222721FA100C95659 /* Views.swift in Sources */,
 				349B042D227CFEA400AF37BE /* InvoiceComposer.swift in Sources */,
@@ -798,6 +809,7 @@
 				340723132272151C00C95659 /* SignUpViewController.swift in Sources */,
 				349B042F227CFF9000AF37BE /* CustomPrintPageRenderer.swift in Sources */,
 				3407232D22721FA100C95659 /* Loader.swift in Sources */,
+				AFE2161C22812092002247E3 /* SettingsViewTableViewController.swift in Sources */,
 				34CC60012273AB26005FA540 /* CellCollectionViewCell.swift in Sources */,
 				34F0E18B2278B98900794F94 /* ArchiveViewController.swift in Sources */,
 				340723182272152400C95659 /* WalkthroughContentViewController.swift in Sources */,
