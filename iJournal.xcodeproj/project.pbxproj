@@ -44,8 +44,21 @@
 		349B042D227CFEA400AF37BE /* InvoiceComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349B042C227CFEA400AF37BE /* InvoiceComposer.swift */; };
 		349B042F227CFF9000AF37BE /* CustomPrintPageRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349B042E227CFF9000AF37BE /* CustomPrintPageRenderer.swift */; };
 		349B0434227CFFF100AF37BE /* invoice.html in Resources */ = {isa = PBXBuildFile; fileRef = 349B0431227CFFF100AF37BE /* invoice.html */; };
-		349B0435227CFFF100AF37BE /* last_item.html in Resources */ = {isa = PBXBuildFile; fileRef = 349B0432227CFFF100AF37BE /* last_item.html */; };
-		349B0436227CFFF100AF37BE /* single_item.html in Resources */ = {isa = PBXBuildFile; fileRef = 349B0433227CFFF100AF37BE /* single_item.html */; };
+		349B0435227CFFF100AF37BE /* image_item.html in Resources */ = {isa = PBXBuildFile; fileRef = 349B0432227CFFF100AF37BE /* image_item.html */; };
+		349B0436227CFFF100AF37BE /* text_item.html in Resources */ = {isa = PBXBuildFile; fileRef = 349B0433227CFFF100AF37BE /* text_item.html */; };
+		34A351AE22810A23003463F9 /* apercu-bold-italic-pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 34A351A122810A21003463F9 /* apercu-bold-italic-pro.otf */; };
+		34A351AF22810A23003463F9 /* apercu-medium-italic-pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 34A351A222810A21003463F9 /* apercu-medium-italic-pro.otf */; };
+		34A351B022810A23003463F9 /* apercu-light-pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 34A351A322810A21003463F9 /* apercu-light-pro.otf */; };
+		34A351B122810A23003463F9 /* apercu-regular-pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 34A351A422810A21003463F9 /* apercu-regular-pro.otf */; };
+		34A351B222810A23003463F9 /* apercu-medium-pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 34A351A522810A21003463F9 /* apercu-medium-pro.otf */; };
+		34A351B322810A23003463F9 /* Optima.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 34A351A622810A22003463F9 /* Optima.ttc */; };
+		34A351B422810A23003463F9 /* apercu-mono-bold-pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 34A351A722810A22003463F9 /* apercu-mono-bold-pro.otf */; };
+		34A351B522810A23003463F9 /* apercu-black-pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 34A351A822810A22003463F9 /* apercu-black-pro.otf */; };
+		34A351B622810A23003463F9 /* apercu-bold-pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 34A351A922810A22003463F9 /* apercu-bold-pro.otf */; };
+		34A351B722810A23003463F9 /* apercu-light-italic-pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 34A351AA22810A22003463F9 /* apercu-light-italic-pro.otf */; };
+		34A351B822810A23003463F9 /* apercu-mono-pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 34A351AB22810A22003463F9 /* apercu-mono-pro.otf */; };
+		34A351B922810A23003463F9 /* apercu-black-italic-pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 34A351AC22810A22003463F9 /* apercu-black-italic-pro.otf */; };
+		34A351BA22810A23003463F9 /* apercu-italic-pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 34A351AD22810A23003463F9 /* apercu-italic-pro.otf */; };
 		34B19D46227CA82000595E47 /* Export.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34B19D45227CA82000595E47 /* Export.storyboard */; };
 		34B19D48227CA85900595E47 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34B19D47227CA85900595E47 /* Settings.storyboard */; };
 		34B19D4A227CA8DD00595E47 /* SettingsViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B19D49227CA8DD00595E47 /* SettingsViewViewController.swift */; };
@@ -78,18 +91,6 @@
 		34F0E1982278DDCE00794F94 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F0E1972278DDCE00794F94 /* Element.swift */; };
 		34F0E19A2278DE0C00794F94 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F0E1992278DE0C00794F94 /* HomeTableViewController.swift */; };
 		34F0E19C2278DE8A00794F94 /* EditEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F0E19B2278DE8A00794F94 /* EditEntryViewController.swift */; };
-		34FA3C472277874E00E18732 /* apercu-bold-pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 34FA3C3B2277874D00E18732 /* apercu-bold-pro.otf */; };
-		34FA3C482277874E00E18732 /* apercu-black-pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 34FA3C3C2277874E00E18732 /* apercu-black-pro.otf */; };
-		34FA3C492277874E00E18732 /* apercu-mono-bold-pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 34FA3C3D2277874E00E18732 /* apercu-mono-bold-pro.otf */; };
-		34FA3C4A2277874E00E18732 /* apercu-light-italic-pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 34FA3C3E2277874E00E18732 /* apercu-light-italic-pro.otf */; };
-		34FA3C4B2277874E00E18732 /* apercu-medium-italic-pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 34FA3C3F2277874E00E18732 /* apercu-medium-italic-pro.otf */; };
-		34FA3C4C2277874E00E18732 /* apercu-mono-pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 34FA3C402277874E00E18732 /* apercu-mono-pro.otf */; };
-		34FA3C4D2277874E00E18732 /* apercu-black-italic-pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 34FA3C412277874E00E18732 /* apercu-black-italic-pro.otf */; };
-		34FA3C4E2277874E00E18732 /* apercu-regular-pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 34FA3C422277874E00E18732 /* apercu-regular-pro.otf */; };
-		34FA3C4F2277874E00E18732 /* apercu-bold-italic-pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 34FA3C432277874E00E18732 /* apercu-bold-italic-pro.otf */; };
-		34FA3C502277874E00E18732 /* apercu-medium-pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 34FA3C442277874E00E18732 /* apercu-medium-pro.otf */; };
-		34FA3C512277874E00E18732 /* apercu-light-pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 34FA3C452277874E00E18732 /* apercu-light-pro.otf */; };
-		34FA3C522277874E00E18732 /* apercu-italic-pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 34FA3C462277874E00E18732 /* apercu-italic-pro.otf */; };
 		8984A8ACAD0E5D81B3C81476 /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E9ACA97FE151EDFAC271D5D /* Pods_OneSignalNotificationServiceExtension.framework */; };
 		DCCEFF8993A6204B9E0DC19E /* Pods_iJournal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 931BF83D175DE9BCABD4AEBE /* Pods_iJournal.framework */; };
 /* End PBXBuildFile section */
@@ -161,8 +162,21 @@
 		349B042C227CFEA400AF37BE /* InvoiceComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceComposer.swift; sourceTree = "<group>"; };
 		349B042E227CFF9000AF37BE /* CustomPrintPageRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPrintPageRenderer.swift; sourceTree = "<group>"; };
 		349B0431227CFFF100AF37BE /* invoice.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = invoice.html; sourceTree = "<group>"; };
-		349B0432227CFFF100AF37BE /* last_item.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = last_item.html; sourceTree = "<group>"; };
-		349B0433227CFFF100AF37BE /* single_item.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = single_item.html; sourceTree = "<group>"; };
+		349B0432227CFFF100AF37BE /* image_item.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = image_item.html; sourceTree = "<group>"; };
+		349B0433227CFFF100AF37BE /* text_item.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = text_item.html; sourceTree = "<group>"; };
+		34A351A122810A21003463F9 /* apercu-bold-italic-pro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "apercu-bold-italic-pro.otf"; sourceTree = "<group>"; };
+		34A351A222810A21003463F9 /* apercu-medium-italic-pro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "apercu-medium-italic-pro.otf"; sourceTree = "<group>"; };
+		34A351A322810A21003463F9 /* apercu-light-pro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "apercu-light-pro.otf"; sourceTree = "<group>"; };
+		34A351A422810A21003463F9 /* apercu-regular-pro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "apercu-regular-pro.otf"; sourceTree = "<group>"; };
+		34A351A522810A21003463F9 /* apercu-medium-pro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "apercu-medium-pro.otf"; sourceTree = "<group>"; };
+		34A351A622810A22003463F9 /* Optima.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Optima.ttc; sourceTree = "<group>"; };
+		34A351A722810A22003463F9 /* apercu-mono-bold-pro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "apercu-mono-bold-pro.otf"; sourceTree = "<group>"; };
+		34A351A822810A22003463F9 /* apercu-black-pro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "apercu-black-pro.otf"; sourceTree = "<group>"; };
+		34A351A922810A22003463F9 /* apercu-bold-pro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "apercu-bold-pro.otf"; sourceTree = "<group>"; };
+		34A351AA22810A22003463F9 /* apercu-light-italic-pro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "apercu-light-italic-pro.otf"; sourceTree = "<group>"; };
+		34A351AB22810A22003463F9 /* apercu-mono-pro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "apercu-mono-pro.otf"; sourceTree = "<group>"; };
+		34A351AC22810A22003463F9 /* apercu-black-italic-pro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "apercu-black-italic-pro.otf"; sourceTree = "<group>"; };
+		34A351AD22810A23003463F9 /* apercu-italic-pro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "apercu-italic-pro.otf"; sourceTree = "<group>"; };
 		34B19D45227CA82000595E47 /* Export.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Export.storyboard; sourceTree = "<group>"; };
 		34B19D47227CA85900595E47 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		34B19D49227CA8DD00595E47 /* SettingsViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewViewController.swift; sourceTree = "<group>"; };
@@ -198,18 +212,6 @@
 		34F0E1972278DDCE00794F94 /* Element.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
 		34F0E1992278DE0C00794F94 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		34F0E19B2278DE8A00794F94 /* EditEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEntryViewController.swift; sourceTree = "<group>"; };
-		34FA3C3B2277874D00E18732 /* apercu-bold-pro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "apercu-bold-pro.otf"; path = "../../../../Design/Assets/Fonts/apercu-bold-pro.otf"; sourceTree = "<group>"; };
-		34FA3C3C2277874E00E18732 /* apercu-black-pro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "apercu-black-pro.otf"; path = "../../../../Design/Assets/Fonts/apercu-black-pro.otf"; sourceTree = "<group>"; };
-		34FA3C3D2277874E00E18732 /* apercu-mono-bold-pro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "apercu-mono-bold-pro.otf"; path = "../../../../Design/Assets/Fonts/apercu-mono-bold-pro.otf"; sourceTree = "<group>"; };
-		34FA3C3E2277874E00E18732 /* apercu-light-italic-pro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "apercu-light-italic-pro.otf"; path = "../../../../Design/Assets/Fonts/apercu-light-italic-pro.otf"; sourceTree = "<group>"; };
-		34FA3C3F2277874E00E18732 /* apercu-medium-italic-pro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "apercu-medium-italic-pro.otf"; path = "../../../../Design/Assets/Fonts/apercu-medium-italic-pro.otf"; sourceTree = "<group>"; };
-		34FA3C402277874E00E18732 /* apercu-mono-pro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "apercu-mono-pro.otf"; path = "../../../../Design/Assets/Fonts/apercu-mono-pro.otf"; sourceTree = "<group>"; };
-		34FA3C412277874E00E18732 /* apercu-black-italic-pro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "apercu-black-italic-pro.otf"; path = "../../../../Design/Assets/Fonts/apercu-black-italic-pro.otf"; sourceTree = "<group>"; };
-		34FA3C422277874E00E18732 /* apercu-regular-pro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "apercu-regular-pro.otf"; path = "../../../../Design/Assets/Fonts/apercu-regular-pro.otf"; sourceTree = "<group>"; };
-		34FA3C432277874E00E18732 /* apercu-bold-italic-pro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "apercu-bold-italic-pro.otf"; path = "../../../../Design/Assets/Fonts/apercu-bold-italic-pro.otf"; sourceTree = "<group>"; };
-		34FA3C442277874E00E18732 /* apercu-medium-pro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "apercu-medium-pro.otf"; path = "../../../../Design/Assets/Fonts/apercu-medium-pro.otf"; sourceTree = "<group>"; };
-		34FA3C452277874E00E18732 /* apercu-light-pro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "apercu-light-pro.otf"; path = "../../../../Design/Assets/Fonts/apercu-light-pro.otf"; sourceTree = "<group>"; };
-		34FA3C462277874E00E18732 /* apercu-italic-pro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "apercu-italic-pro.otf"; path = "../../../../Design/Assets/Fonts/apercu-italic-pro.otf"; sourceTree = "<group>"; };
 		7BC17B8E7C1ECB9D5343DD3C /* Pods-iJournal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iJournal.release.xcconfig"; path = "Target Support Files/Pods-iJournal/Pods-iJournal.release.xcconfig"; sourceTree = "<group>"; };
 		8A34DE3C38C0E9B1ABA88389 /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 		931BF83D175DE9BCABD4AEBE /* Pods_iJournal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iJournal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -398,8 +400,8 @@
 			isa = PBXGroup;
 			children = (
 				349B0431227CFFF100AF37BE /* invoice.html */,
-				349B0432227CFFF100AF37BE /* last_item.html */,
-				349B0433227CFFF100AF37BE /* single_item.html */,
+				349B0432227CFFF100AF37BE /* image_item.html */,
+				349B0433227CFFF100AF37BE /* text_item.html */,
 			);
 			path = HtmlTemplate;
 			sourceTree = "<group>";
@@ -453,18 +455,19 @@
 		34FA3C3A2277873400E18732 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				34FA3C412277874E00E18732 /* apercu-black-italic-pro.otf */,
-				34FA3C3C2277874E00E18732 /* apercu-black-pro.otf */,
-				34FA3C432277874E00E18732 /* apercu-bold-italic-pro.otf */,
-				34FA3C3B2277874D00E18732 /* apercu-bold-pro.otf */,
-				34FA3C462277874E00E18732 /* apercu-italic-pro.otf */,
-				34FA3C3E2277874E00E18732 /* apercu-light-italic-pro.otf */,
-				34FA3C452277874E00E18732 /* apercu-light-pro.otf */,
-				34FA3C3F2277874E00E18732 /* apercu-medium-italic-pro.otf */,
-				34FA3C442277874E00E18732 /* apercu-medium-pro.otf */,
-				34FA3C3D2277874E00E18732 /* apercu-mono-bold-pro.otf */,
-				34FA3C402277874E00E18732 /* apercu-mono-pro.otf */,
-				34FA3C422277874E00E18732 /* apercu-regular-pro.otf */,
+				34A351AC22810A22003463F9 /* apercu-black-italic-pro.otf */,
+				34A351A822810A22003463F9 /* apercu-black-pro.otf */,
+				34A351A122810A21003463F9 /* apercu-bold-italic-pro.otf */,
+				34A351A922810A22003463F9 /* apercu-bold-pro.otf */,
+				34A351AD22810A23003463F9 /* apercu-italic-pro.otf */,
+				34A351AA22810A22003463F9 /* apercu-light-italic-pro.otf */,
+				34A351A322810A21003463F9 /* apercu-light-pro.otf */,
+				34A351A222810A21003463F9 /* apercu-medium-italic-pro.otf */,
+				34A351A522810A21003463F9 /* apercu-medium-pro.otf */,
+				34A351A722810A22003463F9 /* apercu-mono-bold-pro.otf */,
+				34A351AB22810A22003463F9 /* apercu-mono-pro.otf */,
+				34A351A422810A21003463F9 /* apercu-regular-pro.otf */,
+				34A351A622810A22003463F9 /* Optima.ttc */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -583,34 +586,35 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34FA3C472277874E00E18732 /* apercu-bold-pro.otf in Resources */,
-				34FA3C492277874E00E18732 /* apercu-mono-bold-pro.otf in Resources */,
-				34FA3C4F2277874E00E18732 /* apercu-bold-italic-pro.otf in Resources */,
+				34A351B422810A23003463F9 /* apercu-mono-bold-pro.otf in Resources */,
+				34A351B122810A23003463F9 /* apercu-regular-pro.otf in Resources */,
+				34A351B922810A23003463F9 /* apercu-black-italic-pro.otf in Resources */,
+				34A351B322810A23003463F9 /* Optima.ttc in Resources */,
 				349B0434227CFFF100AF37BE /* invoice.html in Resources */,
 				34B19D48227CA85900595E47 /* Settings.storyboard in Resources */,
-				34FA3C502277874E00E18732 /* apercu-medium-pro.otf in Resources */,
 				34B19D46227CA82000595E47 /* Export.storyboard in Resources */,
-				34FA3C4B2277874E00E18732 /* apercu-medium-italic-pro.otf in Resources */,
 				340723352272207F00C95659 /* Home.storyboard in Resources */,
-				34FA3C522277874E00E18732 /* apercu-italic-pro.otf in Resources */,
-				34FA3C482277874E00E18732 /* apercu-black-pro.otf in Resources */,
-				34FA3C4C2277874E00E18732 /* apercu-mono-pro.otf in Resources */,
 				34B19D4E227CADE400595E47 /* Tags.storyboard in Resources */,
 				346B13A62270D02F00A79B66 /* LaunchScreen.storyboard in Resources */,
-				34FA3C4E2277874E00E18732 /* apercu-regular-pro.otf in Resources */,
-				349B0435227CFFF100AF37BE /* last_item.html in Resources */,
+				34A351B022810A23003463F9 /* apercu-light-pro.otf in Resources */,
+				349B0435227CFFF100AF37BE /* image_item.html in Resources */,
+				34A351B622810A23003463F9 /* apercu-bold-pro.otf in Resources */,
 				346B13BE2270D1B600A79B66 /* GoogleService-Info.plist in Resources */,
-				349B0436227CFFF100AF37BE /* single_item.html in Resources */,
+				349B0436227CFFF100AF37BE /* text_item.html in Resources */,
 				340723082272128F00C95659 /* preHome.storyboard in Resources */,
+				34A351B722810A23003463F9 /* apercu-light-italic-pro.otf in Resources */,
 				3407230C227212D200C95659 /* Main.storyboard in Resources */,
+				34A351BA22810A23003463F9 /* apercu-italic-pro.otf in Resources */,
+				34A351AE22810A23003463F9 /* apercu-bold-italic-pro.otf in Resources */,
+				34A351AF22810A23003463F9 /* apercu-medium-italic-pro.otf in Resources */,
 				349B040C227CD01E00AF37BE /* Archive.storyboard in Resources */,
 				340723092272128F00C95659 /* Onboarding.storyboard in Resources */,
+				34A351B822810A23003463F9 /* apercu-mono-pro.otf in Resources */,
 				346B13A32270D02F00A79B66 /* Assets.xcassets in Resources */,
 				34CC5FF7227358DB005FA540 /* Voiceaudio.xib in Resources */,
-				34FA3C4D2277874E00E18732 /* apercu-black-italic-pro.otf in Resources */,
 				34F0E18F2278DCEC00794F94 /* Rite.storyboard in Resources */,
-				34FA3C4A2277874E00E18732 /* apercu-light-italic-pro.otf in Resources */,
-				34FA3C512277874E00E18732 /* apercu-light-pro.otf in Resources */,
+				34A351B222810A23003463F9 /* apercu-medium-pro.otf in Resources */,
+				34A351B522810A23003463F9 /* apercu-black-pro.otf in Resources */,
 				34CC5FFF2273A525005FA540 /* TestStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

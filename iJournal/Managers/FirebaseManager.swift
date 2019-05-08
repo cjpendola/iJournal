@@ -477,7 +477,6 @@ class FirebaseManager {
         
         elements = content
         dispatchGroup.enter()
-        
         checkContent(ele:elements[countElement])
         dispatchGroup.notify(queue: .main) {
             let entry =  Entry(title: title, content: self.newElements, date: nil,  profile_id: loggedInUserProfile, documentRef: nil, documentID: "")
@@ -495,89 +494,74 @@ class FirebaseManager {
         }
     }
     
-    
-    
     func checkContent(ele:Element){
         print("checkContent")
         print(elements.count)
         print(countElement)
-        
-        if(countElement < elements.count - 1 ){
-            if let info = ele.info as? UIImage{
-                let uniqueID = NSUUID().uuidString
-                uploadImage(image: info, uniqueID:uniqueID ) { (imgUrl) in
-                    self.newElements.append( Element(info: imgUrl, file:.image ) )
-                    self.countElement += 1
+        if let info = ele.info as? UIImage{
+            let uniqueID = NSUUID().uuidString
+            /*uploadImage(image: info, uniqueID:uniqueID ) { (imgUrl) in
+                self.newElements.append( Element(info: imgUrl, file:.image ) )
+                self.countElement += 1
+                
+                if(self.countElement != self.elements.count){
                     self.checkContent(ele:self.elements[self.countElement])
                 }
-                /*uploadToCatBox(image: info, uniqueID:uniqueID ) { (imgUrl) in
-                    self.newElements.append( Element(info: imgUrl, file:.image ) )
-                    self.countElement += 1
+                else{
+                    self.dispatchGroup.leave()
+                }
+            }*/
+            
+            uploadToCatBox(image: info, uniqueID: uniqueID ) { (imgUrl) in
+                self.newElements.append( Element(info: imgUrl, file:.image ) )
+                self.countElement += 1
+                
+                if(self.countElement != self.elements.count){
                     self.checkContent(ele:self.elements[self.countElement])
-                }*/
+                }
+                else{
+                    self.dispatchGroup.leave()
+                }
             }
-            else{
-                if let info = ele.info as? String{
+            
+            
+            
+        }
+        else{
+            if let info = ele.info as? String{
+                if(ele.file == .image ){
+                    if(info != ""){
+                        newElements.append( Element(info: info, file:.image ) )
+                    }
+                    self.countElement += 1
+                    
+                    if(self.countElement != self.elements.count){
+                        self.checkContent(ele:self.elements[self.countElement])
+                    }
+                    else{
+                        self.dispatchGroup.leave()
+                    }
+                }
+                else{
                     if(info != ""){
                         newElements.append( Element(info: info, file:.text ) )
                     }
                     self.countElement += 1
-                    self.checkContent(ele:self.elements[self.countElement])
+                    
+                    if(self.countElement != self.elements.count){
+                        self.checkContent(ele:self.elements[self.countElement])
+                    }
+                    else{
+                        self.dispatchGroup.leave()
+                    }
                 }
+                
             }
-        }
-        else{
-            dispatchGroup.leave()
         }
         
     }
     
-    
-//    func addEntry( title:String, content:[Element], completion: @escaping (Bool) -> Void) {
-//        print("addEntry")
-//        guard let loggedInUserProfile = loggedInUserProfile?.documentRef else {
-//            print("A reference was missing")
-//            return
-//        }
-//        var elements : [Element] = []
-//        let dispatchGroup = DispatchGroup()
-//        for ele in content{
-//            dispatchGroup.enter()
-//            if let info = ele.info as? UIImage{
-//                let uniqueID = NSUUID().uuidString
-//                //elements.append( Element(info: uniqueID, file:.text ) )
-//                uploadImage(image: info, uniqueID:uniqueID ) { (imgUrl) in
-//                    elements.append( Element(info: imgUrl, file:.image ) )
-//                    dispatchGroup.leave()
-//                }
-//            }
-//            else{
-//                if let info = ele.info as? String{
-//                    elements.append( Element(info: info, file:.text ) )
-//                }
-//                dispatchGroup.leave()
-//            }
-//        }
-//
-//        dispatchGroup.notify(queue: .main) {
-//            let entry =  Entry(title: title, content: elements, date: nil,  profile_id: loggedInUserProfile, documentRef: nil, documentID: "")
-//            self.db.collection("entries").document().setData(
-//                entry.dictionaryRepresentation()
-//            ) { error in
-//                if let error = error {
-//                    print("Error adding entry: \((error, error.localizedDescription))")
-//                    completion(false)
-//                } else {
-//                    print("Successfully added entry!")
-//                    completion(true)
-//                }
-//            }
-//        }
-//    }
-    
-    
-    
-    
+
     func getUserEntries( completion: @escaping (Bool) -> Void) {
         print("getUserEntries")
         guard let profileRef = loggedInUserProfile?.documentRef
@@ -587,7 +571,6 @@ class FirebaseManager {
                 return
         }
         
-        //print(profileRef)
         db.collection("entries").whereField("profile_id", isEqualTo: profileRef).addSnapshotListener { (querySnapshot, error) in
             if querySnapshot?.documents == nil || error != nil {
                 print("Error querying entries: \((error, error!.localizedDescription))")
@@ -664,9 +647,12 @@ class FirebaseManager {
         }
         
         let imageToUpload: UIImage = UIImage(cgImage: cgimage)
+        
         if let imageToUpload = imageToUpload.jpegData(compressionQuality: 1) {
+            
             let metadata = StorageMetadata()
             metadata.contentType = "image/jpg"
+            
             storageRef.putData(imageToUpload , metadata: metadata, completion: { (_, error) in
                 if let _ = error {
                     completion("")
@@ -795,7 +781,6 @@ class FirebaseManager {
             
         }).resume()
     }
-    
 }
 
 

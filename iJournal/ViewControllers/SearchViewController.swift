@@ -10,9 +10,11 @@ import UIKit
 
 class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
-
+    @IBOutlet weak var menuButton:UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
+    
+    var searchTag:String = ""
    
     
     var searchActive : Bool = false
@@ -22,13 +24,27 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if self.revealViewController() != nil {
+            menuButton.target = self.revealViewController()
+            menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
+        
         searchBar.delegate = self
+        searchBar.setImage(UIImage(), for: .clear, state: .normal)
         FirebaseManager.shared.getUserEntries { (success) in
             if(success)
             {
                 DispatchQueue.main.async {
                     self.entry = FirebaseManager.shared.userEntries
                     self.tableView.reloadData()
+                    
+                    let searchTag = UserDefaults.standard.string(forKey: "tagSelected") ?? ""
+                    if(searchTag != ""){
+                        self.searchBar.text = searchTag
+                        self.searchBar(self.searchBar, textDidChange: searchTag)
+                        UserDefaults.standard.set("", forKey: "tagSelected")
+                    }
                 }
             }
         }
@@ -96,7 +112,6 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if segue.identifier == "passDetail" {
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
             guard let detailVC = segue.destination as? EditEntryViewController else { return }
@@ -116,8 +131,9 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     // MARK: - Private instance methods
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         filteredEntries = entry.filter({ (entry) -> Bool in
-            entry.title.lowercased().contains(searchText.lowercased())
+            return entry.title.lowercased().contains(searchText.lowercased()) ||  entry.tags!.contains(searchText.lowercased())
         })
+        
         if(filteredEntries.count == 0){
             searchActive = false;
         } else {
@@ -141,5 +157,13 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchActive = false;
     }
+    
+    /*private func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        guard let firstSubview = searchBar.subviews.first else { return }
+        
+        firstSubview.subviews.forEach {
+            ($0 as? UITextField)?.clearButtonMode = .never
+        }
+    }*/
 }
 

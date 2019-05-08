@@ -30,6 +30,8 @@ class EditEntryViewController: UIViewController, UIImagePickerControllerDelegate
         guard let entry = entry else {  return  }
         self.entry = entry
         self.elements = entry.content
+        titleLabel.text = entry.title
+        
     }
     
     
@@ -102,7 +104,17 @@ class EditEntryViewController: UIViewController, UIImagePickerControllerDelegate
         }else if content.file == .image {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "imageCell", for: indexPath) as? ImageTableViewCell else {return UITableViewCell()}
             
-            cell.content = content
+            if let info = content.info as? String{
+                EntryController.shared.fetchImage(url: info, count:0 ) { (image, number) in
+                    if (image != nil){
+                        DispatchQueue.main.async {
+                            cell.batman.image = image
+                        }
+                    }
+                }
+            }else{
+                cell.content = content
+            }
             return cell
         }
         return UITableViewCell()
@@ -133,15 +145,24 @@ class EditEntryViewController: UIViewController, UIImagePickerControllerDelegate
     }
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
-        if fromExistingFile == false {
-            guard let entry = entry, let titleText = titleLabel.text else {return}
-            entry.title = titleText
+        if let entry = entry{
+            guard let titleText = titleLabel.text else {return}
+            FirebaseManager.shared.updateEntry(entry:entry, title:titleText, content:elements) { (success) in
+                if(success){
+                    print("updated on firebase")
+                    self.navigationController?.popViewController(animated: true)
+                }
+            }
+            
+        }else {
+            guard let titleText = titleLabel.text else {return}
+            FirebaseManager.shared.addEntry(title:titleText, content:elements) { (success) in
+                if(success){
+                    print("created on firebase")
+                    self.navigationController?.popViewController(animated: true)
+                }
+            }
         }
-        
-        //if let entry = self.entry
-        
-        
-        //navigationController?.popViewController(animated: true)
     }
     
     @IBAction func newTextFieldButtonPressed(_ sender: UIBarButtonItem) {

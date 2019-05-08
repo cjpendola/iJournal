@@ -83,7 +83,7 @@
         <scene sceneID="Ycx-vi-gLh">
             <objects>
                 <tableViewController id="IAo-Jw-fne" customClass="MenuViewController" customModule="iJournal" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="132" sectionHeaderHeight="22" sectionFooterHeight="22" id="nN5-Pp-BYJ">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="132" sectionHeaderHeight="22" sectionFooterHeight="22" id="nN5-Pp-BYJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -109,6 +109,9 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <segue destination="FgB-if-i96" kind="show" identifier="passSearchDetail" customClass="SWRevealViewControllerSeguePushController" id="U1z-hK-BUl"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -132,7 +135,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </mapView>
             </objects>
-            <point key="canvasLocation" x="-159.42028985507247" y="338.83928571428572"/>
+            <point key="canvasLocation" x="-159" y="320"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="URG-At-hhO">
@@ -356,7 +359,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BF6-6K-6rr" userLabel="NewStack">
-                                                    <rect key="frame" x="40" y="72.5" width="334" height="95"/>
+                                                    <rect key="frame" x="40" y="69.5" width="334" height="101"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="247" text="Good afternoon," lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1xo-zS-dpr">
                                                             <rect key="frame" x="0.0" y="0.0" width="199.5" height="33.5"/>
@@ -365,13 +368,13 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What are you thinking about now?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yaq-gi-9Nw">
-                                                            <rect key="frame" x="0.0" y="41.5" width="214" height="16.5"/>
+                                                            <rect key="frame" x="0.0" y="41.5" width="214.5" height="19.5"/>
                                                             <fontDescription key="fontDescription" name="ApercuPro-Regular" family="Apercu Pro" pointSize="14"/>
                                                             <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Czw-uJ-O6Q">
-                                                            <rect key="frame" x="0.0" y="66" width="96" height="29"/>
+                                                            <rect key="frame" x="0.0" y="69" width="99" height="32"/>
                                                             <fontDescription key="fontDescription" name="ApercuPro-Italic" family="Apercu Pro" pointSize="14"/>
                                                             <state key="normal" title="Write about it...">
                                                                 <color key="titleColor" red="1" green="0.20784313730000001" blue="0.098039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -541,7 +544,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="aZa-wq-CGR">
                             <connections>
-                                <segue destination="P2Q-fI-UDm" kind="show" id="kg1-rW-z2N"/>
+                                <segue destination="P2Q-fI-UDm" kind="show" id="gZN-yC-V8o"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -559,7 +562,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ie6-fa-iIf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1537.68115942029" y="-396.42857142857139"/>
+            <point key="canvasLocation" x="2558" y="-485"/>
         </scene>
         <!--Search-->
         <scene sceneID="2M1-ff-d2o">
@@ -642,38 +645,20 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JWj-ol-KH0"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Search" id="24Q-e2-599">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="JzM-lu-10c"/>
+                    </navigationItem>
                     <connections>
+                        <outlet property="menuButton" destination="JzM-lu-10c" id="bDB-E7-zss"/>
                         <outlet property="searchBar" destination="gbP-p4-r7J" id="Cwx-0V-OFR"/>
                         <outlet property="tableView" destination="mBC-TG-LxG" id="GSs-8X-x51"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uMd-Ej-oOZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2692.753623188406" y="-893.30357142857133"/>
+            <point key="canvasLocation" x="2172" y="319"/>
         </scene>
-        <!--Title-->
-        <scene sceneID="5fK-Lv-00p">
-            <objects>
-                <viewController id="7wQ-Am-dlE" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Dj5-xV-GAG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="kMg-8a-zYt"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Title" id="1YD-Ex-4JP">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="5xm-MF-Qfh">
-                            <connections>
-                                <segue destination="pe6-CG-SZp" kind="show" id="Bpk-f4-vli"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GNw-CC-LRM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4359" y="-576"/>
-        </scene>
-        <!--Entry-->
+        <!--Edit Entry View Controller-->
         <scene sceneID="7BH-Pt-IgR">
             <objects>
                 <viewController id="pe6-CG-SZp" customClass="EditEntryViewController" customModule="iJournal" customModuleProvider="target" sceneMemberID="viewController">
@@ -771,9 +756,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Z7g-2l-EvT"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Entry" id="jAT-Cc-b3R">
+                    <navigationItem key="navigationItem" id="jAT-Cc-b3R">
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="save" id="TaO-oA-4sM">
+                            <barButtonItem image="save" id="TaO-oA-4sM">
                                 <connections>
                                     <action selector="saveButtonPressed:" destination="pe6-CG-SZp" id="PUp-V1-4OO"/>
                                 </connections>
@@ -788,6 +773,7 @@
                                     <action selector="newTextFieldButtonPressed:" destination="pe6-CG-SZp" id="QEL-GW-ggg"/>
                                 </connections>
                             </barButtonItem>
+                            <barButtonItem image="pdf" id="Ce2-SI-irc"/>
                         </rightBarButtonItems>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -799,7 +785,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jir-zm-AN3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3763.7681159420295" y="151.33928571428569"/>
+            <point key="canvasLocation" x="3801" y="494"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="D91-Qx-i5L">
@@ -820,7 +806,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ddK-tf-U36" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="688" y="-395"/>
+            <point key="canvasLocation" x="688" y="-485"/>
         </scene>
         <!--Export-->
         <scene sceneID="Bgi-YH-1mG">
@@ -838,20 +824,38 @@
             </objects>
             <point key="canvasLocation" x="-591" y="751"/>
         </scene>
-        <!--Tags-->
-        <scene sceneID="JlW-hk-bRg">
+        <!--Navigation Controller-->
+        <scene sceneID="3Rz-HW-ufh">
             <objects>
-                <viewControllerPlaceholder storyboardName="Tags" id="IUC-CX-d0l" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YPh-tW-5UV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FgB-if-i96" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="C76-qG-JWu">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="P2Q-fI-UDm" kind="relationship" relationship="rootViewController" id="vEy-IG-Xmg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2kH-za-1Sl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1048" y="339"/>
+            <point key="canvasLocation" x="1197" y="319"/>
         </scene>
     </scenes>
     <resources>
         <image name="menu" width="22" height="22"/>
+        <image name="pdf" width="25" height="25"/>
+        <image name="save" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="vvk-4g-WRh"/>
-        <segue reference="Bpk-f4-vli"/>
+        <segue reference="cNe-gf-G08"/>
+        <segue reference="gZN-yC-V8o"/>
     </inferredMetricsTieBreakers>
 </document>

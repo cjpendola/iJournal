@@ -11,7 +11,7 @@
 import UIKit
 
 
-enum TypeInfo {
+enum TypeInfo:String {
     case text
     case image
     case audio
@@ -63,7 +63,28 @@ class Element: Equatable {
         self.textView = textView
         self.imageView = imageView
     }
+    
+    init?(_ dictionary: [String : Any]) {
+        let typeRawString = dictionary.keys.first!
+        guard let type = TypeInfo(rawValue: typeRawString) else { return nil }
+        switch type {
+        case .text:
+            guard let info = dictionary.values.first! as? String else { return nil }
+            self.info = info
+            self.file = type
+        case .image:
+            guard let info = dictionary.values.first! as? String else { return nil }
+            self.info = info
+            self.file = type
+        case .audio:
+            guard let info = dictionary.values.first! as? String else { return nil }
+            self.info = info
+            self.file = type
+        }
+    }
+    
 }
+
 
 protocol NoteUIElement {
     
