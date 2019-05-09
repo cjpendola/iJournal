@@ -18,17 +18,17 @@ class WalkthroughViewController: UIViewController, WalkthroughPageViewController
     
     @IBOutlet weak var signupButton: UIButton!{
         didSet {
-            signupButton.layer.masksToBounds = true
+            /*signupButton.layer.masksToBounds = true
             signupButton.layer.borderColor = UIColor.black.cgColor
-            signupButton.layer.borderWidth = 1
+            signupButton.layer.borderWidth = 1*/
         }
     }
     @IBOutlet weak var loginButton: UIButton!
         {
         didSet {
-            loginButton.layer.masksToBounds = true
+            /*loginButton.layer.masksToBounds = true
             loginButton.layer.borderColor = UIColor.black.cgColor
-            loginButton.layer.borderWidth = 1
+            loginButton.layer.borderWidth = 1*/
         }
     }
     

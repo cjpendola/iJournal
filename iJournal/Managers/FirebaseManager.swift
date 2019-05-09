@@ -500,19 +500,7 @@ class FirebaseManager {
         print(countElement)
         if let info = ele.info as? UIImage{
             let uniqueID = NSUUID().uuidString
-            /*uploadImage(image: info, uniqueID:uniqueID ) { (imgUrl) in
-                self.newElements.append( Element(info: imgUrl, file:.image ) )
-                self.countElement += 1
-                
-                if(self.countElement != self.elements.count){
-                    self.checkContent(ele:self.elements[self.countElement])
-                }
-                else{
-                    self.dispatchGroup.leave()
-                }
-            }*/
-            
-            uploadToCatBox(image: info, uniqueID: uniqueID ) { (imgUrl) in
+            uploadImage(image: info, uniqueID:uniqueID ) { (imgUrl) in
                 self.newElements.append( Element(info: imgUrl, file:.image ) )
                 self.countElement += 1
                 
@@ -523,6 +511,18 @@ class FirebaseManager {
                     self.dispatchGroup.leave()
                 }
             }
+            
+            /*uploadToCatBox(image: info, uniqueID: uniqueID ) { (imgUrl) in
+                self.newElements.append( Element(info: imgUrl, file:.image ) )
+                self.countElement += 1
+                
+                if(self.countElement != self.elements.count){
+                    self.checkContent(ele:self.elements[self.countElement])
+                }
+                else{
+                    self.dispatchGroup.leave()
+                }
+            }*/
             
             
             
@@ -728,7 +728,8 @@ class FirebaseManager {
     
     func uploadToCatBox(image:UIImage, uniqueID:String, completion: @escaping(String) -> Void ){
         
-        let filename = "avatar.png"
+        print(uniqueID)
+        let filename = "\(uniqueID).png"
         let boundary = uniqueID
         let fieldName = "reqtype"
         let fieldValue = "fileupload"
@@ -737,7 +738,7 @@ class FirebaseManager {
         let session = URLSession(configuration: config)
         
         // Set the URLRequest to POST and to the specified URL
-        var urlRequest = URLRequest(url: URL(string: "https://catbox.moe/user/api.php")!)
+        var urlRequest = URLRequest(url: URL(string: "http://593develop.com/rite/upload.php")!)
         urlRequest.httpMethod = "POST"
         
         // Set Content-Type Header to multipart/form-data, this is equivalent to submitting form data in a web browser
@@ -765,18 +766,20 @@ class FirebaseManager {
                 return
             }
             
-            guard let responseData = responseData else {
+            print("=========")
+            dump(responseData)
+            print("=========")
+            dump(response)
+            print("=========")
+            dump(error)
+            
+            guard let _ = responseData else {
                 print("no response data")
                 completion("")
                 return
             }
             
-            print( responseData )
-            if let responseString = String(data: responseData, encoding: .utf8) {
-                completion(responseString);
-                return
-            }
-            completion("")
+            completion("http://593develop.com/rite/uploads/\(filename)");
             return
             
         }).resume()

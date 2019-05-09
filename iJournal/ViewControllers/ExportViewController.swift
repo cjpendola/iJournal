@@ -9,7 +9,7 @@
 import UIKit
 import MessageUI
 
-class ExportViewController: UIViewController {
+class ExportViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
     @IBOutlet weak var menuButton:UIBarButtonItem!
     @IBOutlet weak var webPreview: UIWebView!
@@ -17,6 +17,8 @@ class ExportViewController: UIViewController {
     var invoiceInfo: [String: AnyObject]!
     var invoiceComposer: InvoiceComposer!
     var HTMLContent: String!
+    //lazy var mailComposeViewController = MFMailComposeViewController()
+
     
     var entry:Entry?
     
@@ -24,23 +26,11 @@ class ExportViewController: UIViewController {
         super.viewDidAppear(true)
         NotificationCenter.default.post(name: Notification.Name(rawValue: "showExportMenu"), object: nil)
         
-        FirebaseManager.shared.getUserEntries { (success) in
-            if(success){
-                if(FirebaseManager.shared.userEntries.count > 0){
-                    self.entry = FirebaseManager.shared.userEntries[0]
-                    self.createInvoiceAsHTML()
-                }
-            }
-        }
+        self.createInvoiceAsHTML()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if self.revealViewController() != nil {
-            menuButton.target = self.revealViewController()
-            menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        }
     }
     
     // MARK: IBAction Methods
@@ -97,8 +87,13 @@ class ExportViewController: UIViewController {
         if MFMailComposeViewController.canSendMail() {
             let mailComposeViewController = MFMailComposeViewController()
             mailComposeViewController.setSubject("Invoice")
+            mailComposeViewController.mailComposeDelegate = self
             mailComposeViewController.addAttachmentData(NSData(contentsOfFile: invoiceComposer.pdfFilename)! as Data, mimeType: "application/pdf", fileName: "Invoice")
             present(mailComposeViewController, animated: true, completion: nil)
         }
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
     }
 }

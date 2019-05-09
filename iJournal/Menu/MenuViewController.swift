@@ -20,9 +20,9 @@ class MenuViewController: UITableViewController,ExpandableHeaderViewDelegate {
         Section(name: "Home", tags: [], expanded: false),
         Section(name: "Archives", tags: [], expanded: false),
         Section(name: "Tags", tags: [], expanded: false),
-        Section(name: "Export", tags: [], expanded: false),
-        Section(name: "Settings", tags: [], expanded: false),
-        //Section(name: "Log Out", tags: [], expanded: false) 
+        //Section(name: "Export", tags: [], expanded: false),
+        Section(name: "Reminders", tags: [], expanded: false),
+        Section(name: "Log Out", tags: [], expanded: false) 
     ]
     
     var tags : [String] = []
@@ -148,7 +148,6 @@ class MenuViewController: UITableViewController,ExpandableHeaderViewDelegate {
         sections[section].expanded = !sections[section].expanded
     
         if(sections[section].tags.count == 0){
-            print("do something else")
             if(sections[section].name == "Home"){
                 self.performSegue(withIdentifier: "showHome", sender: nil)
             }
@@ -158,7 +157,7 @@ class MenuViewController: UITableViewController,ExpandableHeaderViewDelegate {
             if(sections[section].name == "Export"){
                 self.performSegue(withIdentifier: "showExport", sender: nil)
             }
-            if(sections[section].name == "Settings"){
+            if(sections[section].name == "Reminders"){
                 self.performSegue(withIdentifier: "showSettings", sender: nil)
             }
             if(sections[section].name == "Log Out"){

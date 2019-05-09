@@ -35,8 +35,6 @@ class TestViewController: UIViewController{
         let lastTextField = textField.text!.last!
         print(lastTextField)
         
-        
-        
         if(lastTextField == "#"){
             createScrollView()
         }else{

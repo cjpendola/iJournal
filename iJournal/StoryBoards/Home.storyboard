@@ -163,7 +163,7 @@
             </objects>
             <point key="canvasLocation" x="-159" y="1144"/>
         </scene>
-        <!--RIET-->
+        <!--RITE-->
         <scene sceneID="mIW-ge-512">
             <objects>
                 <viewController storyboardIdentifier="search" id="yoQ-7g-Jmo" customClass="ArchiveViewController" customModule="iJournal" customModuleProvider="target" sceneMemberID="viewController">
@@ -326,7 +326,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Mkp-BX-RMe"/>
                     </view>
-                    <navigationItem key="navigationItem" title="RIET" id="rBE-4Y-xsa">
+                    <navigationItem key="navigationItem" title="RITE" id="rBE-4Y-xsa">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="tya-3F-pOG"/>
                     </navigationItem>
                     <connections>
@@ -340,7 +340,7 @@
             </objects>
             <point key="canvasLocation" x="688.40579710144937" y="1143.75"/>
         </scene>
-        <!--Rite-->
+        <!--RITE-->
         <scene sceneID="r25-WT-nQv">
             <objects>
                 <tableViewController id="4Zm-GM-hYt" customClass="HomeTableViewController" customModule="iJournal" customModuleProvider="target" sceneMemberID="viewController">
@@ -536,7 +536,7 @@
                             <outlet property="delegate" destination="4Zm-GM-hYt" id="rfY-aX-QoP"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Rite" id="pFm-Nq-WWd">
+                    <navigationItem key="navigationItem" title="RITE" id="pFm-Nq-WWd">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="4Ab-IM-tuL">
                             <connections>
                                 <action selector="showMenuButtonTapped:" destination="4Zm-GM-hYt" id="4VQ-zE-P2W"/>
@@ -773,19 +773,24 @@
                                     <action selector="newTextFieldButtonPressed:" destination="pe6-CG-SZp" id="QEL-GW-ggg"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="pdf" id="Ce2-SI-irc"/>
+                            <barButtonItem image="pdf" id="Ce2-SI-irc">
+                                <connections>
+                                    <segue destination="vJN-iV-qgC" kind="show" identifier="passDetailToPDF" id="1BJ-xR-Bvd"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
+                        <outlet property="pdfOutlet" destination="Ce2-SI-irc" id="AZu-eh-pcW"/>
                         <outlet property="tableView" destination="RLJ-H4-rnx" id="bBp-QL-Hcf"/>
                         <outlet property="titleLabel" destination="7vx-H3-YsW" id="gAf-LQ-cxe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jir-zm-AN3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3801" y="494"/>
+            <point key="canvasLocation" x="3471" y="481"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="D91-Qx-i5L">
@@ -814,7 +819,7 @@
                 <viewControllerPlaceholder storyboardName="Export" id="wKJ-pI-yJN" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zP4-Rb-fJc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="259" y="751"/>
+            <point key="canvasLocation" x="424" y="737"/>
         </scene>
         <!--Settings-->
         <scene sceneID="Azx-RO-Ard">
@@ -822,7 +827,7 @@
                 <viewControllerPlaceholder storyboardName="Settings" id="t2Y-fH-a10" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j63-oO-L7r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-591" y="751"/>
+            <point key="canvasLocation" x="-669" y="737"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3Rz-HW-ufh">
@@ -847,6 +852,47 @@
             </objects>
             <point key="canvasLocation" x="1197" y="319"/>
         </scene>
+        <!--Export-->
+        <scene sceneID="2vx-Rn-hLQ">
+            <objects>
+                <viewController id="vJN-iV-qgC" customClass="ExportViewController" customModule="iJournal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XJL-vf-D73">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gzc-YD-YBF">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="WTt-xQ-gyn" firstAttribute="bottom" secondItem="gzc-YD-YBF" secondAttribute="bottom" id="4Xp-hC-dbW"/>
+                            <constraint firstItem="WTt-xQ-gyn" firstAttribute="bottom" secondItem="gzc-YD-YBF" secondAttribute="bottom" id="PnR-Th-5yc"/>
+                            <constraint firstItem="WTt-xQ-gyn" firstAttribute="trailing" secondItem="gzc-YD-YBF" secondAttribute="trailing" id="RXJ-SF-86R"/>
+                            <constraint firstItem="gzc-YD-YBF" firstAttribute="leading" secondItem="WTt-xQ-gyn" secondAttribute="leading" id="Tli-SF-kaS"/>
+                            <constraint firstItem="gzc-YD-YBF" firstAttribute="leading" secondItem="WTt-xQ-gyn" secondAttribute="leading" id="Ukk-QE-96b"/>
+                            <constraint firstItem="gzc-YD-YBF" firstAttribute="top" secondItem="WTt-xQ-gyn" secondAttribute="top" id="klT-Re-eMb"/>
+                            <constraint firstItem="WTt-xQ-gyn" firstAttribute="trailing" secondItem="gzc-YD-YBF" secondAttribute="trailing" id="t5M-AJ-dUs"/>
+                            <constraint firstItem="gzc-YD-YBF" firstAttribute="top" secondItem="WTt-xQ-gyn" secondAttribute="top" id="zvH-9t-OWb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WTt-xQ-gyn"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Export" id="oYK-Em-llv">
+                        <barButtonItem key="rightBarButtonItem" title="PDF" id="Frp-tl-p0y">
+                            <connections>
+                                <action selector="exportToPDF:" destination="vJN-iV-qgC" id="8zu-ht-zPQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="webPreview" destination="gzc-YD-YBF" id="hGc-t2-bf1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LhT-S3-ijI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4542" y="481"/>
+        </scene>
     </scenes>
     <resources>
         <image name="menu" width="22" height="22"/>
@@ -855,7 +901,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="vvk-4g-WRh"/>
-        <segue reference="cNe-gf-G08"/>
+        <segue reference="UPk-FO-e6f"/>
         <segue reference="gZN-yC-V8o"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -12,18 +12,28 @@ class NotifcationSettingsViewController: UIViewController, UITextViewDelegate {
 
     var selectedDay: Int?
     
+    @IBOutlet weak var itemOutlet: UIBarButtonItem!
     //MARK: - Outlets
 
     @IBOutlet weak var notificationPrompt: UITextView!
     @IBOutlet weak var timePicker: UIDatePicker!
     @IBOutlet weak var promptTextView: UITextView!
     
+    @IBOutlet weak var menu: UIBarButtonItem!
+    
     var descriptionString : String?
     //MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         promptTextView.delegate = self
+        itemOutlet.isHidden = true
         // Do any additional setup after loading the view.
+        
+        if self.revealViewController() != nil {
+            menu.target = self.revealViewController()
+            menu.action = #selector(SWRevealViewController.revealToggle(_:))
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
     }
     
     func textViewDidChange(_ textView: UITextView) {
@@ -38,7 +48,6 @@ class NotifcationSettingsViewController: UIViewController, UITextViewDelegate {
     @IBAction func daySelectValueChanged(_ sender: UISegmentedControl) {
         RiteNotificationController.shared.alarmSet(day: sender.selectedSegmentIndex)
         selectedDay = sender.selectedSegmentIndex
-       
     }
     
     
@@ -49,7 +58,9 @@ class NotifcationSettingsViewController: UIViewController, UITextViewDelegate {
     
     
     @IBAction func scheduleButtonPressed(_ sender: UIButton) {
-        guard let string = descriptionString else {return}
+        //guard let string = descriptionString else {return}
+        
+        let string  = "cj test"
         RiteNotificationController.shared.repeatNotification(string: string)
          //RiteNotificationController.shared.scheduleAlarm()
         

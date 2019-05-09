@@ -13,11 +13,13 @@ class InvoiceComposer: NSObject {
     let pathToInvoiceHTMLTemplate = Bundle.main.path(forResource: "invoice", ofType: "html")
     let pathToTextItemHTMLTemplate = Bundle.main.path(forResource: "text_item", ofType: "html")
     let pathToImageItemHTMLTemplate = Bundle.main.path(forResource: "image_item", ofType: "html")
-    let senderInfo = "Gabriel Theodoropoulos<br>123 Somewhere Str.<br>10000 - MyCity<br>MyCountry"
+    let senderInfo = ""
     let dueDate = ""
-    let paymentMethod = "Wire Transfer"
+    let paymentMethod = ""
     
     let logoImageURL = "https://firebasestorage.googleapis.com/v0/b/ijournal-b3c03.appspot.com/o/Icon-120.png?alt=media&token=1cae82bd-5079-42a5-bd38-d2f3a9bd49aa"
+    
+    //let logoImageURL = "http://593develop.com/rite/image.jpeg"
     
     //let logoImageURL = "http://www.appcoda.com/wp-content/uploads/2015/12/blog-logo-dark-400.png"
     

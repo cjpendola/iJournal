@@ -33,6 +33,7 @@
 		340BA319227E6D5400273312 /* NSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340BA318227E6D5400273312 /* NSMutableAttributedString.swift */; };
 		341586DF227E3A420043E1BB /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341586DE227E3A420043E1BB /* Section.swift */; };
 		341586E1227E3A5F0043E1BB /* ExpandableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341586E0227E3A5F0043E1BB /* ExpandableHeader.swift */; };
+		342E92E9228CCB2D004D2CAB /* HourPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342E92E8228CCB2D004D2CAB /* HourPickerViewController.swift */; };
 		346B139C2270D02E00A79B66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346B139B2270D02E00A79B66 /* AppDelegate.swift */; };
 		346B139E2270D02E00A79B66 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346B139D2270D02E00A79B66 /* ViewController.swift */; };
 		346B13A32270D02F00A79B66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 346B13A22270D02F00A79B66 /* Assets.xcassets */; };
@@ -59,6 +60,7 @@
 		34A351B822810A23003463F9 /* apercu-mono-pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 34A351AB22810A22003463F9 /* apercu-mono-pro.otf */; };
 		34A351B922810A23003463F9 /* apercu-black-italic-pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 34A351AC22810A22003463F9 /* apercu-black-italic-pro.otf */; };
 		34A351BA22810A23003463F9 /* apercu-italic-pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 34A351AD22810A23003463F9 /* apercu-italic-pro.otf */; };
+		34ACA4252283325D00F14256 /* UIBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ACA4242283325D00F14256 /* UIBarItem.swift */; };
 		34B19D46227CA82000595E47 /* Export.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34B19D45227CA82000595E47 /* Export.storyboard */; };
 		34B19D48227CA85900595E47 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34B19D47227CA85900595E47 /* Settings.storyboard */; };
 		34B19D4C227CA8E700595E47 /* ExportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B19D4B227CA8E700595E47 /* ExportViewController.swift */; };
@@ -151,6 +153,7 @@
 		340BA318227E6D5400273312 /* NSMutableAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedString.swift; sourceTree = "<group>"; };
 		341586DE227E3A420043E1BB /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		341586E0227E3A5F0043E1BB /* ExpandableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableHeader.swift; sourceTree = "<group>"; };
+		342E92E8228CCB2D004D2CAB /* HourPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourPickerViewController.swift; sourceTree = "<group>"; };
 		346B13982270D02E00A79B66 /* iJournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iJournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		346B139B2270D02E00A79B66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		346B139D2270D02E00A79B66 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +183,7 @@
 		34A351AB22810A22003463F9 /* apercu-mono-pro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "apercu-mono-pro.otf"; sourceTree = "<group>"; };
 		34A351AC22810A22003463F9 /* apercu-black-italic-pro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "apercu-black-italic-pro.otf"; sourceTree = "<group>"; };
 		34A351AD22810A23003463F9 /* apercu-italic-pro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "apercu-italic-pro.otf"; sourceTree = "<group>"; };
+		34ACA4242283325D00F14256 /* UIBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBarItem.swift; sourceTree = "<group>"; };
 		34B19D45227CA82000595E47 /* Export.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Export.storyboard; sourceTree = "<group>"; };
 		34B19D47227CA85900595E47 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		34B19D4B227CA8E700595E47 /* ExportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportViewController.swift; sourceTree = "<group>"; };
@@ -293,6 +297,7 @@
 				340BA316227E570700273312 /* SearchViewController.swift */,
 				AFE2161B22812092002247E3 /* SettingsViewTableViewController.swift */,
 				AFD7CE522281EEC50094613E /* NotifcationSettingsViewController.swift */,
+				342E92E8228CCB2D004D2CAB /* HourPickerViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -426,6 +431,7 @@
 				34092CF1227BCF6700F5FA89 /* UIImage.swift */,
 				34BE697F2280DEAB004ECABD /* TextTableViewCell.swift */,
 				34BE69812280DECD004ECABD /* ImageTableViewCell.swift */,
+				34ACA4242283325D00F14256 /* UIBarItem.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -787,6 +793,7 @@
 				34B19D50227CAE4600595E47 /* TagsViewController.swift in Sources */,
 				AFD7CE532281EEC50094613E /* NotifcationSettingsViewController.swift in Sources */,
 				3407231A2272152400C95659 /* WalkthroughPageViewController.swift in Sources */,
+				34ACA4252283325D00F14256 /* UIBarItem.swift in Sources */,
 				AFD7CE552281F6AA0094613E /* RiteNotification.swift in Sources */,
 				34F0E1852278B39200794F94 /* String.swift in Sources */,
 				3407231E22721D3E00C95659 /* FirebaseManager.swift in Sources */,
@@ -811,6 +818,7 @@
 				3407232D22721FA100C95659 /* Loader.swift in Sources */,
 				AFE2161C22812092002247E3 /* SettingsViewTableViewController.swift in Sources */,
 				34CC60012273AB26005FA540 /* CellCollectionViewCell.swift in Sources */,
+				342E92E9228CCB2D004D2CAB /* HourPickerViewController.swift in Sources */,
 				34F0E18B2278B98900794F94 /* ArchiveViewController.swift in Sources */,
 				340723182272152400C95659 /* WalkthroughContentViewController.swift in Sources */,
 				34E1A1A9227A363B00A7DD8B /* SearchTableViewCell.swift in Sources */,
@@ -1004,13 +1012,13 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = iJournal/iJournal.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2779EQ3QB6;
+				DEVELOPMENT_TEAM = CC2FU4U4ZR;
 				INFOPLIST_FILE = "$(SRCROOT)/iJournal/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.colin.iJournal;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cjpendola.iJournal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "iJournal/Menu/iJournal-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1028,13 +1036,13 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = iJournal/iJournal.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2779EQ3QB6;
+				DEVELOPMENT_TEAM = CC2FU4U4ZR;
 				INFOPLIST_FILE = "$(SRCROOT)/iJournal/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.colin.iJournal;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cjpendola.iJournal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "iJournal/Menu/iJournal-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -1047,18 +1055,18 @@
 			baseConfigurationReference = 16CB4750E1B1279F028E1B01 /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2779EQ3QB6;
+				DEVELOPMENT_TEAM = CC2FU4U4ZR;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.colin.iJournal.OneSignalNotificationServiceExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cjpendola.iJournal.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1067,18 +1075,18 @@
 			baseConfigurationReference = 8A34DE3C38C0E9B1ABA88389 /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2779EQ3QB6;
+				DEVELOPMENT_TEAM = CC2FU4U4ZR;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.colin.iJournal.OneSignalNotificationServiceExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cjpendola.iJournal.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -22,9 +22,10 @@ class RiteNotificationController {
 
     var weekdayComponent = DateComponents(weekday: 0)
     
+    var identifier = ""
     
     //MARK: - Event Kit Recurrence and Alarm
-    func addEventToCalendar(title: String, description: String?, startDate: Date, endDate: Date, completion: ((_ success: Bool, _ error: NSError?) -> Void)? = nil){
+    /*func addEventToCalendar(title: String, description: String?, startDate: Date, endDate: Date, completion: ((_ success: Bool, _ error: NSError?) -> Void)? = nil){
         let eventStore = EKEventStore()
         
         eventStore.requestAccess(to: .event, completion: { (granted, error) in
@@ -60,19 +61,14 @@ class RiteNotificationController {
                 completion?(false, error as NSError?)
             }
         })
-    }
+    }*/
     
-    private func createDate(date: String!, hours: Int!, minutes:Int! ) -> Date{
+    /*private func createDate(date: String!, hours: Int!, minutes:Int! ) -> Date{
         var fullDateArr = date.components(separatedBy: "-")
-        
-        
-        
-        
         
         let startMonth: Int? = Int(fullDateArr[0])!
         let startDay: Int? = Int(fullDateArr[1])!
         let startYear: Int = Int(fullDateArr[2])!
-        
         
         var dateComponents = DateComponents()
         dateComponents.year = startYear
@@ -86,20 +82,34 @@ class RiteNotificationController {
         let someDateTime = userCalendar.date(from: dateComponents)
         
         return someDateTime!
-    }
+    }*/
     
     //MARK: Alarm with Notifications
     
     func alarmSet(day: Int){
         switch day {
-        case 0: weekdayComponent = DateComponents(weekday: 1)
+        case 0:
+            weekdayComponent = DateComponents(weekday: 1)
+            identifier = "Sunday"
+        case 1:
+            weekdayComponent = DateComponents(weekday: 2)
+            identifier = "Monday"
+        case 2:
+            weekdayComponent = DateComponents(weekday: 3)
+            identifier = "Tuesday"
+        case 3:
+            weekdayComponent = DateComponents(weekday: 4)
+            identifier = "Wednesday"
+        case 4:
+            weekdayComponent = DateComponents(weekday: 5)
+            identifier = "Thursday"
+        case 5:
+            weekdayComponent = DateComponents(weekday: 6)
+            identifier = "Friday"
+        case 6:
+            weekdayComponent = DateComponents(weekday: 7)
+            identifier = "Saturday"
             
-        case 1: weekdayComponent = DateComponents(weekday: 2)
-        case 2: weekdayComponent = DateComponents(weekday: 3)
-        case 3: weekdayComponent = DateComponents(weekday: 4)
-        case 4: weekdayComponent = DateComponents(weekday: 5)
-        case 5: weekdayComponent = DateComponents(weekday: 6)
-        case 6: weekdayComponent = DateComponents(weekday: 7)
         default: print("error")
         }
         print(weekdayComponent)
@@ -110,27 +120,27 @@ class RiteNotificationController {
         let content = UNMutableNotificationContent()
         content.title = "Scheduled Notification from Rite"
         content.body = string
-        content.categoryIdentifier = "WeeklyNotification"
+        content.categoryIdentifier = identifier
     
         
         let components = Calendar.current.dateComponents([.weekday, .hour, .minute], from: dateFromPicker ?? Date())
         let hour = components.hour!
         let minute = components.minute!
         var specificComponents = DateComponents()
-        specificComponents.weekday = components.weekday
+        specificComponents.weekday = weekdayComponent.weekday
         specificComponents.hour = hour
         specificComponents.minute = minute
         specificComponents.second = 0
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: specificComponents, repeats: true)
-        
-        let request = UNNotificationRequest(identifier: "WeeklyNotification", content: content, trigger: trigger)
-        
+        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request) { (error) in
             if let error = error {
                 print("error in weekly reminder: \(error.localizedDescription)")
             }
         }
+        
+        dump(specificComponents)
     }
 
     
